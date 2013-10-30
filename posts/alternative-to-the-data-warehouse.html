@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Rick Bergfalk's Directory of Things</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <a href="/"><h1>Rick Bergfalk</h1></a>
+          <h2>Directory of Things</h2>
+        </header>
+
+        <hr>
+	<a href="/posts/">Back to Posts</a>
+	<hr>	
+	<section id="main_content">
+		<h1>
+			Difficulties with a real-time Data Warehouse
+		</h1>
+		<small>
+			May 2013
+		</small>
+		<hr>
+		<div>
+			<p>When building a Data Warehouse, at some point you must discuss how often the data must be refreshed. When you ask the business this question, they&#39;ll usually say something along the lines of, &quot;How often? We want it real-time!&quot;</p>
+<p>There&#39;s been a lot of discussion in the Business Intelligence industry about &quot;real-time&quot; data warehousing. For a while it was all the rage, but it has since been quietly dismissed. BI people have even invented a new term like they always do - your data warehouse doesn&#39;t need to be &quot;real-time&quot;... it needs to be &quot;right-time.&quot;</p>
+<h2>It will get complicated. fast.</h2>
+<p>Real-time data warehousing is a lot more challenging to build and maintain than one that is bulk loaded. It&#39;s fragile. There are more moving parts that could break to keep it running. If something does break, then you have to make sure you properly load the missing data. </p>
+<p>It&#39;s a lot more complicated. Running a real-time data warehouse usually involves shipping database log files, or setting up some form of change-data-capture. And to do that you can no longer use simple SQL scripts and stored procedure - you&#39;ll need to start utilizing specialized tools.</p>
+<p>Compare this to the opposite - a bulk-loaded data warehouse that is fully rebuilt every month, week, or day. Bulk-loading databases and allowing them to fully be rebuilt is easy, cheap, and contains very little risk. Something goes wrong with today&#39;s data warehouse rebuild? Just load up yesterday&#39;s snapshot in a pinch.</p>
+<h2>Today doesn&#39;t matter when looking at the last 5 years</h2>
+<p>One of the main reasons to build a data warehouse is to create an environment where you have access to large amounts of data. You can run queries that analyze <em>years</em> of data, and they will finish in a reasonable time.</p>
+<p>Think about this for a moment - If you are analyzing data from the last several years, what difference does it make if you have today&#39;s data or not? </p>
+<p>Chances are it won&#39;t make a difference. If it doesn&#39;t matter if you run a report this morning vs. this afternoon vs. tomorrow then it doesn&#39;t matter if you have a real-time data warehouse. </p>
+
+		</div>
+	</section>
+	<hr>
+	<a href="/posts/">Back to Posts</a>
+
+		<footer>
+			
+			<!--
+			<section id="downloads" class="clearfix">
+				<a href="https://github.com/rickbergfalk" id="view-on-github" class="button"><span>me on GitHub</span></a>
+			</section>
+			-->
+			<p>
+				Rick Bergfalk is a Business Intelligence developer that dabbles with web development on the side via Node.js.
+			</p>
+			<p class="footer-links">
+				© Rick Bergfalk 2013 <a href="http://github.com/rickbergfalk">github</a> <a href="http://twitter.com/rickbergfalk">twitter</a>
+			</p>
+		</footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>

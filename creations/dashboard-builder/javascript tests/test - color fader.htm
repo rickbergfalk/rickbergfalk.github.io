@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Untitled Document</title>
+		<style>
+			div {
+				width: 100px;
+				height: 100px;
+				margin: 10 10 10 10;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='d1'></div>
+		<div id='d2'></div>
+		<div id='d3'></div>
+	</body>
+	<script type="text/javascript">
+		var d1 = document.getElementById('d1');
+		var d2 = document.getElementById('d2');
+		var d3 = document.getElementById('d3');
+		
+		
+		function colorToArray(color) {
+			if (color.substring(0,1) == '#') {
+				color = color.substring(1,7);
+			}
+			colorArray = [color.substring(0,2), color.substring(2,4), color.substring(4,6)];
+			for (var i = 0; i < 3; i++) {
+				colorArray[i] = parseInt(colorArray[i], 16);
+			}
+			return colorArray;
+		}
+		
+		
+		/*	Function fadeColor
+		 *	color: starting color
+		 *	target: target color to fade to
+		 *	percent: percent of the delta between color and target
+		 */
+		function fadeColor(color, target, percent) {
+			// put color strings into an array, remove # if present
+			color = colorToArray(color);
+			target = colorToArray(target);
+			
+			for (var i = 0; i < 3; i++){
+				var delta = target[i] - color[i];
+				delta = delta * percent;
+				color[i] = color[i] + delta;
+				
+				// strip decimal (which converts to string) then convert back to number
+				color[i] = parseInt(color[i].toFixed())
+				
+				// convert number base 10 to hex
+				color[i] = color[i].toString(16);
+				
+				// pad in an extra 0 if necessary
+				if (color[i] == '0') {color[i] = '00';}
+				
+			}
+
+			return '#' + color[0] + color[1] + color[2];
+		}
+		
+		var startColor = '#33AAAA';
+		
+		d2.style.backgroundColor = startColor;
+		d1.style.backgroundColor = fadeColor(startColor, '#222222', .3);
+		d3.style.backgroundColor = fadeColor(startColor, '#DDDDDD', .8);
+	</script>
+</html>

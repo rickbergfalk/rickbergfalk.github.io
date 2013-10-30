@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Chart Builder v1</title>
+		<link type="text/css" href="css/reset.css" rel="stylesheet" />
+		<link type="text/css" href="css/black-tie/jquery-ui-1.8.4.custom.css" rel="stylesheet" />
+		<link type="text/css" href="css/infoman.css" rel="stylesheet" />
+		<link type="text/css" href="css/popup.css" rel="stylesheet" />
+		<link type="text/css" href="css/OptionUp.css" rel="stylesheet" />
+		<link type="text/css" href="css/button.css" rel="stylesheet" />
+		<link type="text/css" href="css/jquery.jqplot.min.css" rel="stylesheet" />
+	</head>
+	<body>
+		
+		<!-- datasource -->
+		<div class="row">
+			<div class="column grid_4">
+				<p>Data to Analyze</p>
+			</div>
+			<div class="column grid_8">
+				<p>
+					<span id="ds-button"></span>
+				</p>
+			</div>
+		</div>
+		
+		<!-- visualization -->
+		<div class="row">
+			<div class="column grid_4">
+				<p>Visualization</p>
+			</div>
+			<div class="column grid_8">
+				<p>
+					<a id="vis-button" class="big-text-button">(Choose a Visualization)</a>
+					<br/>
+					<div id="demo-output" class="widget-output"></div>
+				</p>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="column grid_4">
+				<p>Vis. Setup</p>
+			</div>
+			<div class="column grid_8">
+				<ul id="widget-options">
+					
+				</ul>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="column grid_4">
+				<p>Filters</p>
+			</div>
+			<div class="column grid_8">
+				<ul id="filters">
+					
+				</ul>
+			</div>
+		</div>
+		
+		<!--
+		<br/><br/><br/><br/><br/><br/>
+		<div class="row">
+			<div class="column grid_12">
+				<div id="test">
+					<p> test stuff:</p>
+				</div>
+			</div>
+		</div>
+		-->
+		
+		<!--[if IE]><script language="javascript" type="text/javascript" src="excanvas.js"></script><![endif]-->
+		<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui-1.8.4.custom.min.js"></script>
+		<script type="text/javascript" src="js/jquery.jqplot.min.js"></script>
+		<script type="text/javascript" src="js/jqplot-plugins/jqplot.barRenderer.min.js"></script>
+		<script type="text/javascript" src="js/jqplot-plugins/jqplot.categoryAxisRenderer.min.js"></script>
+		<script type="text/javascript" src="js/jqplot-plugins/jqplot.bubbleRenderer.min.js"></script>
+		<script type="text/javascript" src="js/datasource.js"></script>
+		<script type="text/javascript" src="js/datasource-list.js"></script>
+		<script type="text/javascript" src="js/ib.js"></script>
+		<script type="text/javascript" src="js/ib.Popup.js"></script>
+		<script type="text/javascript" src="js/ib.Button.js"></script>
+		<script type="text/javascript" src="js/OptionUp.js"></script>
+		<script type="text/javascript" src="js/ib.Filter.js"></script>
+		<script type="text/javascript" src="js/ib.Widget.js"></script>
+		<script type="text/javascript" src="js/widget-registrations.js"></script>
+		<script type+"text/javascript" src="js/on-page-load.js"></script>
+		
+		
+		
+	</body>
+</html>
+
+

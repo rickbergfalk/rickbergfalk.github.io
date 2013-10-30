@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Untitled Document</title>
+		<link rel='stylesheet' href="jquery/css/cupertino/jquery-ui-1.7.2.custom.css"></link>
+		<script src='jquery/js/jquery-1.3.2.min.js'></script>
+		<script src='jquery/js/jquery-ui.js'></script>
+		<style>
+			body {
+				margin:0px;
+				padding:0px;
+			}
+			.menu {
+				width: 200px;
+				height: 500px;
+				margin-left: -230px;
+				position:absolute;
+				top: 20px;
+				left: 20px;
+				background-color: orange;
+			}
+			.menu-after {
+				top: 20px;
+				left: 20px;
+				margin-left: 0px;
+			}
+			.content {
+				margin: 20px 20px 0px 20px;
+				height: 500px;
+			}
+			.content-after {
+				margin: 20px 20px 0px 220px;
+			}
+			#innerdiv {
+				margin:auto;
+				width: 600px;
+				height: 500px;
+				background-color: #cccccc;
+			}
+		</style>
+		<script>
+			$(function() {
+				$("#button").click(function(){
+					!$("#menu").is(":animated") && $("#menu").toggleClass('menu-after', 1000);
+					!$("#content").is(":animated") && $("#content").toggleClass('content-after', 1000);
+					return false;	
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id='menu' class='menu'>menu menu</div>
+		<div id='content' class='content'>
+			<div id='innerdiv'>
+				Inner Div
+				<br/>
+				<a id="button" href=# class="ui-state-default ui-corner-all">Run Effect</a>
+			</div>
+		</div>
+	</body>
+</html>

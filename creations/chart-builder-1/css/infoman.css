@@ -1,0 +1,112 @@
+/*
+#007C99 / 005C79 dark blue
+#A5E6ED light blue
+#EFFFF5 white
+#FFD45D orange
+#FFB141 dark orange
+*/
+body * {margin: 0px; padding: 0px;}
+body {
+	background-color: #F5F5F5;
+	font-family:  Arial;
+	letter-spacing: .5px;
+}
+
+li {
+	list-style: none;
+}
+
+
+.content-label {
+	font-size: 30px;
+	font-family: georgia;
+	color: #333;
+	display: inline-block;
+}
+a {
+	cursor: pointer;
+}
+p {
+	font: normal 26px/40px Georgia, serif;
+	margin: 0 0 20px 0;
+}
+
+#demo-output {
+	/* margin: 0 0 0 100px; */
+}
+
+/*** Data Sources ***/
+.datasource {
+	border: 1px solid #AAA;
+	height: 100px;
+	width: 650px;
+	margin: 10px 10px 10px 0;
+	background-color: background-color: rgba(245,245,245,.85);
+	/*--CSS3 Box Shadows--*/
+	-webkit-box-shadow: 2px 2px 2px #CCC;
+	-moz-box-shadow: 3px 3px 3px #000;
+	box-shadow: 3px 3px 3px #000;
+}
+.datasource a {
+	display: inline-block;
+	height: 100px;
+}
+.datasource a:hover {
+	background-color: rgba(255,165,0,0.7);
+	
+}
+.datasource h3 {
+	display: block;
+	width: 160px;
+	height: 100px;
+	float: left;
+	font-family:  Arial;
+	font-size: 24px;
+	margin: 10px 10px 10px 0;
+}
+.datasource div {
+	float: left;
+	width: 460px;
+	height: 100px;
+	margin: 10px;
+}
+
+/*** Visualizations ***/
+#vis-list ul {
+	display: block;
+	clear: left;
+	height: 140px;
+	margin: 0 0 20px 0px;
+}
+#vis-list li {
+	display: block;
+	float: left;
+	width: 140px;
+	height: 140px;
+	
+}
+#vis-list .vis-label {
+	/* background-color: #EEF; */
+	font-family:  Arial;
+	font-size: 24px;
+	margin: 10px 10px 10px 0;
+}
+.vis-selection {
+	margin: 10px;
+}
+.vis-selection a {
+	display: block;
+	width: 140px;
+	height: 140px;
+	/*background-color: #A5E6ED;*/
+	background-color: rgba(245,245,245,0.85);
+	/*--CSS3 Box Shadows--*/
+	-webkit-box-shadow: 2px 2px 2px #CCC;
+	-moz-box-shadow: 2px 2px 2px #CCC;
+	box-shadow: 2px 2px 2px #CCC;
+	
+	border: 1px solid #AAA;
+}
+.vis-selection a:hover {
+	background-color: rgba(255,165,0,0.70);
+}
