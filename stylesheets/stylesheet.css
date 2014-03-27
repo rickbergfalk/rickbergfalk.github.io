@@ -69,8 +69,7 @@ header {
 }
 
 header h1 {
-  font-family: 'Chivo', 'Helvetica Neue', Helvetica, Arial, serif; font-weight: 900;
-  letter-spacing: -1px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, serif;
   font-size: 48px;
   color: #303030;
   line-height: 1.2;
@@ -317,9 +316,6 @@ footer {
   color: #777;
 }
 
-footer a {
-  color: #666;
-}
 footer a:hover {
   color: #444;
 }

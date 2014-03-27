@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Rick Bergfalk's Directory of Things</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <a href="/"><h1>Rick Bergfalk</h1></a>
+        </header>
+
+        <hr>
+	<section id="main_content">
+		<h1>
+			Building Ready Set SQL
+		</h1>
+		<small>
+			January 2014
+		</small>
+		<hr>
+		<div>
+			<p>Ready Set SQL is a side project I started in the Fall of 2011. 
+At the time I was teaching myself as I went, and also using it as a platform for learning all the fancy HTML/JS/CSS technologies I had been reading about but never actually done anything with.</p>
+<h2>The Architecture</h2>
+<p>When I started this side project, I had convinced myself I should learn Ruby and Ruby on Rails. And Git. And Test Driven Development. </p>
+<p>It all became overwhelming just starting out, so I dug in and learned Node.js, skipping the focus on Test Driven Development and only learning enough Git to get me by. I already had been learning client-side JavaScript, so jumping into Node was easy and liberating.</p>
+<p>Over the year I had been reading a lot about various web trends, so I used Ready Set SQL as a platform to experiment with a lot of things. I started with a traditional Express.js app, with a mix of server-side rendering with jQuery/javascript running the interactive front end stuff. 
+Then I got the bug to make it a purely client-side app, and tried a little Knockout. And then Backbone.</p>
+<p>Shortly after doing that, I read posts about people migrating away from client-side web apps. These posts brought up experiences of it over-complicating things for some use cases and search-engine-optimization issues. It involved a big chunk of javascript to be sent up front. Pushstate with hashtag url fallbacks. Duplication of clientside/serverside code.</p>
+<p>I related to a lot of it, and because this app isn&#39;t <em>that</em> dynamic and interactive, I decided I&#39;d rewrite a bunch of it again. </p>
+<p>The next round was a combo static-html thing with some server side stuff. It was cool but the work flow got kind of clunky. Especially since I decided to split the repos (one for the static html content and generators, the other for the web-service and database).</p>
+<p>In the end I went back to what I knew and what I had started with: a traditional Express.js app with jQuery and my own javascript objects. </p>
+<h2>A Change in Vision</h2>
+<p>The architecture wasn&#39;t the only thing I flip-flopped on. 
+The vision I had for this application was greatly scaled back too. </p>
+<p>When I started Ready Set SQL, there were user accounts and progress meters for each lesson. The app would remember which lessons a user completed. Eventually people could pay for this I thought.</p>
+<p>But then that meant commitment. Availability and user data security would become a big deal, especially if people were going to pay for it. My progress began to slow - I was losing interest in the project and with it motivation to work on it. The thought of doing all that payment user stuff started to feel like a lot of work for something I wasn&#39;t that sure about.</p>
+<p>A fun little side project quickly felt like a chore. I kept re-architecting it and not making any real progress. Something had to change. </p>
+<p>I finally decided to scale things back and make it a simple, interactive website. Viewers can jump in and try it out, and keep track of their own progress if they are that interested.</p>
+<p>I also decided to make it free and open source. I&#39;ve learned <em>a lot</em> from the internet. Most of what I used to build this app are other open source libraries, and the only reason I was even able to put all this together was because of the various tutorials, articles, and examples online.</p>
+<h2>Lessons Learned</h2>
+<ul>
+<li><p>Don&#39;t let all the languages, frameworks, and libraries impact your enjoyment of your side-project. If you enjoy javascript use javascript. If you enjoy Ruby use Ruby. </p>
+</li>
+<li><p>Try to focus on finishing the side project and seeing it to the end (especially before changing frameworks or libraries). There will always be exceptions to this. There will also be other projects to try the other frameworks and libraries on too. </p>
+</li>
+</ul>
+
+		</div>
+	</section>
+
+		<footer>
+			
+			<p>
+				Hello! I'm a Business Intelligence developer/SQL Server DBA that dabbles with web development on the side via Node.js.
+				It's an odd combination. Find my code on <a href="http://github.com/rickbergfalk">GitHub</a>. I'm on <a href="http://twitter.com/rickbergfalk">Twitter</a>.
+			</p>
+			<p class="footer-links">
+				© Rick Bergfalk 2014
+			</p>
+		</footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>

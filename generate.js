@@ -96,18 +96,6 @@ var renderIndex = function () {
 	fs.outputFileSync(__dirname + '/index.html', renderedHome);
 }
 
-var renderPostIndex = function () {
-	console.log('rendering home');
-	var renderedHome = ejs.render(templates.templateContent('posts'), {
-		posts: db().get(), 	// possibly db().order("date desc").get()
-		moment: moment,
-		//categories: db().distinct("category"),
-		title: 'Rick Bergfalk',
-		filename: USER_LAYOUTS_DIRECTORY + '/posts.ejs'
-	});
-	fs.outputFileSync(__dirname + '/posts/index.html', renderedHome);
-}
-
 
 var renderAllPosts = function () {
 	var posts = db().get();
@@ -131,7 +119,6 @@ var render = function () {
 	} else {
 		isGenerating = true;
 		renderIndex();
-		renderPostIndex();
 		renderAllPosts();
 		isGenerating = false;
 		if (nextRender) {
