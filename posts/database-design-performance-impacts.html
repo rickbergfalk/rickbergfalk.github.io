@@ -22,19 +22,20 @@
         <hr>
 	<section id="main_content">
 		<h1>
-			Database Design Performance Impacts
+			Database Design Antipatterns
 		</h1>
 		<small>
 			February 2014
 		</small>
 		<hr>
 		<div>
-			<p>This is going to be a living document where I jot down some database design antipatterns that can end up hurting database performance.</p>
-<h2>Non-sequential GUIDs as Clustered Index</h2>
+			<h2>Using Random, Non-sequential GUIDs as Clustered Index Key</h2>
+<p>A clustered index key determines the physical layout of an index/table on disk. If a random value is used, such as a non-sequential GUID, the index/table will frequently find itself highly fragmented. </p>
+<p>Another disadvantage of a random clustered key is that data will be dispersed throughout the table, potentially causing </p>
 <p>GUIDs / UniqueIdentifiers are random. If they are going to be the clustered index then they should be at least sequential GUIDs. </p>
 <p>Why? The clustering index of a SQL Server table determines the physical ordering of the table on disc. Non-sequential GUIDs will cause a lot of table fragmentation. It will also cause data to be scattered around the table for a given time period. (let&#39;s say you want the last months of records, if using a random guid, those last month&#39;s records are now dispersed throughout entire table!)</p>
-<h2>Triggers</h2>
-<p>Generally not a good practice. Generally not performant. Could be misused or abused out of laziness or bad culture around a database. </p>
+<h2>Overuse of Triggers</h2>
+<p>Triggers aren&#39;t a bad thing, but like many features of a RDBMS they can be abused. And abusing triggers could lead to poor performance.</p>
 <p>For example: Modified dates. Set the modified date via the application code. Using a trigger to do it means doubling the number of updates on a table. </p>
 <h2>Dynamic SQL</h2>
 <p>Sometimes Dynamic SQL is necessary and even helpful, but a lot of times it&#39;s a sign that your data model is not optimal. </p>
@@ -59,7 +60,8 @@
 			
 			<p>
 				Hello! I'm a Business Intelligence developer/SQL Server DBA that dabbles with web development on the side via Node.js.
-				It's an odd combination. Find my code on <a href="http://github.com/rickbergfalk">GitHub</a>. I'm on <a href="http://twitter.com/rickbergfalk">Twitter</a>.
+				Yes, it's an odd combination. You can find most of my web-related code on <a href="http://github.com/rickbergfalk">GitHub</a>. 
+				I'm also on <a href="http://twitter.com/rickbergfalk">Twitter</a>, although I don't tweet much.
 			</p>
 			<p class="footer-links">
 				© Rick Bergfalk 2014

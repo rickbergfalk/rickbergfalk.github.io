@@ -49,12 +49,12 @@ function loadPostsDb () {
 	// flatten theposts
 	for (var i= 0; i < theposts.length; i++) {
 		var post = theposts[i];
-		for (key in post.meta) {
+		for (var key in post.meta) {
 			post["meta_" + key] = post.meta[key];
 		}
 	}
 	db = taffy(theposts);
-};
+}
 loadPostsDb();
 
 console.log(JSON.stringify(db().get()[0], null, 2));
@@ -94,7 +94,7 @@ var renderIndex = function () {
 		filename: USER_LAYOUTS_DIRECTORY + '/home.ejs'
 	});
 	fs.outputFileSync(__dirname + '/index.html', renderedHome);
-}
+};
 
 
 var renderAllPosts = function () {
@@ -110,13 +110,14 @@ var renderAllPosts = function () {
 		});
 		fs.outputFileSync(__dirname + '/posts/' + post.filename + '.html', html);
 	});
-}
+};
 
 var render = function () {
 	if (isGenerating) {
 		console.log('already generating - render queued');
 		nextRender = true;
 	} else {
+		loadPostsDb();
 		isGenerating = true;
 		renderIndex();
 		renderAllPosts();
@@ -127,7 +128,7 @@ var render = function () {
 			render();
 		}
 	}
-}
+};
 
 
 watch.watchTree(USER_POSTS_DIRECTORY, {ignoreDotFiles: true}, _.debounce(render, 1000, false));

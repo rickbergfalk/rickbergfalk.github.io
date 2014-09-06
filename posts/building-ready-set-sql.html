@@ -22,39 +22,39 @@
         <hr>
 	<section id="main_content">
 		<h1>
-			Building Ready Set SQL
+			What I Learned Building Ready Set SQL
 		</h1>
 		<small>
-			January 2014
+			June 2014
 		</small>
 		<hr>
 		<div>
-			<p>Ready Set SQL is a side project I started in the Fall of 2011. 
-At the time I was teaching myself as I went, and also using it as a platform for learning all the fancy HTML/JS/CSS technologies I had been reading about but never actually done anything with.</p>
-<h2>The Architecture</h2>
-<p>When I started this side project, I had convinced myself I should learn Ruby and Ruby on Rails. And Git. And Test Driven Development. </p>
-<p>It all became overwhelming just starting out, so I dug in and learned Node.js, skipping the focus on Test Driven Development and only learning enough Git to get me by. I already had been learning client-side JavaScript, so jumping into Node was easy and liberating.</p>
-<p>Over the year I had been reading a lot about various web trends, so I used Ready Set SQL as a platform to experiment with a lot of things. I started with a traditional Express.js app, with a mix of server-side rendering with jQuery/javascript running the interactive front end stuff. 
+			<p><a href="http://www.readysetsql.com/">Ready Set SQL</a> is a side project I started in the Fall of 2011. At the time I was teaching myself as I went, and also using it as a platform for learning all the fancy HTML/JS/CSS technologies I had been reading about but never actually done anything with.</p>
+<p>It&#39;s now Summer 2014, and Ready Set SQL is mostly finished. Or at least it&#39;s as finished as it&#39;ll ever be. Here are my own thoughts on how things went and what I&#39;d do differently if I restarted the project for a fourth time.</p>
+<h2>Regarding frameworks and libraries</h2>
+<p>When I started this side project, I sought out a bunch of libraries and frameworks to use. At the time I had been reading a lot about various web trends, so I used Ready Set SQL as a platform to experiment with a lot of things. I started with a traditional Express.js app, with a mix of server-side rendering with jQuery/javascript running the interactive front end stuff. 
 Then I got the bug to make it a purely client-side app, and tried a little Knockout. And then Backbone.</p>
-<p>Shortly after doing that, I read posts about people migrating away from client-side web apps. These posts brought up experiences of it over-complicating things for some use cases and search-engine-optimization issues. It involved a big chunk of javascript to be sent up front. Pushstate with hashtag url fallbacks. Duplication of clientside/serverside code.</p>
-<p>I related to a lot of it, and because this app isn&#39;t <em>that</em> dynamic and interactive, I decided I&#39;d rewrite a bunch of it again. </p>
+<p>Shortly after doing that, I read posts about people migrating away from client-side web apps for various reasons. I could relate to some of them and realized it wasn&#39;t a good fit for what I was building, so began rewriting things again. </p>
 <p>The next round was a combo static-html thing with some server side stuff. It was cool but the work flow got kind of clunky. Especially since I decided to split the repos (one for the static html content and generators, the other for the web-service and database).</p>
-<p>In the end I went back to what I knew and what I had started with: a traditional Express.js app with jQuery and my own javascript objects. </p>
-<h2>A Change in Vision</h2>
-<p>The architecture wasn&#39;t the only thing I flip-flopped on. 
-The vision I had for this application was greatly scaled back too. </p>
-<p>When I started Ready Set SQL, there were user accounts and progress meters for each lesson. The app would remember which lessons a user completed. Eventually people could pay for this I thought.</p>
-<p>But then that meant commitment. Availability and user data security would become a big deal, especially if people were going to pay for it. My progress began to slow - I was losing interest in the project and with it motivation to work on it. The thought of doing all that payment user stuff started to feel like a lot of work for something I wasn&#39;t that sure about.</p>
-<p>A fun little side project quickly felt like a chore. I kept re-architecting it and not making any real progress. Something had to change. </p>
-<p>I finally decided to scale things back and make it a simple, interactive website. Viewers can jump in and try it out, and keep track of their own progress if they are that interested.</p>
-<p>I also decided to make it free and open source. I&#39;ve learned <em>a lot</em> from the internet. Most of what I used to build this app are other open source libraries, and the only reason I was even able to put all this together was because of the various tutorials, articles, and examples online.</p>
-<h2>Lessons Learned</h2>
-<ul>
-<li><p>Don&#39;t let all the languages, frameworks, and libraries impact your enjoyment of your side-project. If you enjoy javascript use javascript. If you enjoy Ruby use Ruby. </p>
-</li>
-<li><p>Try to focus on finishing the side project and seeing it to the end (especially before changing frameworks or libraries). There will always be exceptions to this. There will also be other projects to try the other frameworks and libraries on too. </p>
-</li>
-</ul>
+<p>In the end I went back to what I knew and what I had started with: a traditional Express.js app with jQuery and my own javascript objects.</p>
+<h2>I should have finished the first iteration before starting the second</h2>
+<p>One of the reasons it took so long to get Ready Set SQL to where it is now was because of the time I spent reworking things. In total, I probably rewrote the application 4 times. </p>
+<p>In hindsight I wish I would have completed the first iteration before starting the second. Each time I reworked the first half of the project, I delayed learning about the challenges that would appear during the second half.</p>
+<h2>I should have written the lessons before I wrote the tool</h2>
+<p>In all the lessons I&#39;ve written in the lesson editor I built, I&#39;ve only used about half the features. Little did I know that I would stick to a certain format for the lessons, and not actually need half the stuff I was building.</p>
+<p>Basically, <em>You Ain&#39;t Gonna Need It</em>. Figure out what you need first. Then build it. And only build what you need.</p>
+<p>Another saying that applies is <em>form follows function</em>. It was challenging to build a tool to build lessons when I wasn&#39;t quite sure what the lessons would be like in the first place. </p>
+<h2>The lesson viewer might not have been the best approach</h2>
+<p>Writing the lessons, I discovered I wanted to be more visual with certain things. I wanted to have SQL queries out on the page, with hand written notes pointing things out. Maybe a .gif of how a join works. Maybe more narrative, who knows. </p>
+<p>What I know now though is that the lesson viewer setup demands lessons be a certain kind of way. Otherwise it feels awkward. The lesson viewer is set up in a way that expects the user to always be writing SQL. This works I guess if they were always going to write SQL, but sometimes I wish I had a better way to show and tell what the lesson is trying to teach.</p>
+<p>The lesson content pane was also too small. It wasn&#39;t quite enough space for what I wanted to do with it. A full-width page, where you scroll down and came across visualizations, pictures, and an interactive editor might have been a better approach.</p>
+<h2>I enjoy building the system more than creating the lessons</h2>
+<p>This was a big realization. When the application side of things was mostly finished, I wanted to move on. All I had to do is create the lessons, but I couldn&#39;t bring myself to do it. I kept procrastinating and putting it off.</p>
+<p>I realized through this process that teaching is hard. It gave me a new kind of respect towards teachers, as well as other developers who write to teach what they know. </p>
+<p>I also realized that teaching was something I didn&#39;t want to do without an audience. I built this tool knowing it&#39;d be valuable to some people, but I don&#39;t know any of those people. Not having a direct audience for feedback kind of killed any motivation I had to continue working on it.</p>
+<h2>I work on side projects in seasons</h2>
+<p>Fall 2011 to Spring 2014 is a long time. In an age of people cranking out simple web-apps in a month or weekend, why did it take me 2.5 years!?</p>
+<p>In some ways looking at the time I spent on this project is depressing. However, looking at the activity over the course of 4 rewites and 2 git repos, I realized that I work on my side-projects in seasons. I&#39;ll have spans of a few days to a few weeks where I work on my projects a bunch, only to abruptly stop and not touch them for months.</p>
 
 		</div>
 	</section>
@@ -63,7 +63,8 @@ The vision I had for this application was greatly scaled back too. </p>
 			
 			<p>
 				Hello! I'm a Business Intelligence developer/SQL Server DBA that dabbles with web development on the side via Node.js.
-				It's an odd combination. Find my code on <a href="http://github.com/rickbergfalk">GitHub</a>. I'm on <a href="http://twitter.com/rickbergfalk">Twitter</a>.
+				Yes, it's an odd combination. You can find most of my web-related code on <a href="http://github.com/rickbergfalk">GitHub</a>. 
+				I'm also on <a href="http://twitter.com/rickbergfalk">Twitter</a>, although I don't tweet much.
 			</p>
 			<p class="footer-links">
 				© Rick Bergfalk 2014
