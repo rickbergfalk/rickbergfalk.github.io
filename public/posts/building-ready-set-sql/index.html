@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Rick Bergfalk  | What I Learned Building Ready Set SQL</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.31.1" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    <link href='http://rickbergfalk.github.io/dist/main.css' rel='stylesheet' type="text/css" />
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="What I Learned Building Ready Set SQL" />
+<meta property="og:description" content="Ready Set SQL is a side project I started in the Fall of 2011. At the time I was teaching myself as I went, and also using it as a platform for learning all the fancy HTML/JS/CSS technologies I had been reading about but never actually done anything with.
+It&rsquo;s now Summer 2014, and Ready Set SQL is mostly finished. Or at least it&rsquo;s as finished as it&rsquo;ll ever be." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://rickbergfalk.github.io/posts/building-ready-set-sql/" />
+
+
+
+<meta property="article:published_time" content="2014-06-12T20:01:24-05:00"/>
+
+<meta property="article:modified_time" content="2014-06-12T20:01:24-05:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="What I Learned Building Ready Set SQL">
+<meta itemprop="description" content="Ready Set SQL is a side project I started in the Fall of 2011. At the time I was teaching myself as I went, and also using it as a platform for learning all the fancy HTML/JS/CSS technologies I had been reading about but never actually done anything with.
+It&rsquo;s now Summer 2014, and Ready Set SQL is mostly finished. Or at least it&rsquo;s as finished as it&rsquo;ll ever be.">
+
+
+<meta itemprop="datePublished" content="2014-06-12T20:01:24-05:00" />
+<meta itemprop="dateModified" content="2014-06-12T20:01:24-05:00" />
+<meta itemprop="wordCount" content="906">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="What I Learned Building Ready Set SQL"/>
+<meta name="twitter:description" content="Ready Set SQL is a side project I started in the Fall of 2011. At the time I was teaching myself as I went, and also using it as a platform for learning all the fancy HTML/JS/CSS technologies I had been reading about but never actually done anything with.
+It&rsquo;s now Summer 2014, and Ready Set SQL is mostly finished. Or at least it&rsquo;s as finished as it&rsquo;ll ever be."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('http://rickbergfalk.github.io/images/gohugo-default-sample-hero-image.jpg');">
+    <div class="pb3-m pb6-l bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://rickbergfalk.github.io/" class="f3 fw2 hover-white no-underline white-90 dib">
+      Rick Bergfalk
+    </a>
+    <div class="flex-l items-center">
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/posts/" title="Posts page">
+              Posts
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+  <a href="https://twitter.com/rickbergfalk" class="link-transition twitter link dib z-999 pt3 pt0-l mr2" title="Twitter link">
+    <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+  </a>
+
+
+
+
+
+  <a href="https://github.com/rickbergfalk" class="link-transition github link dib z-999 pt3 pt0-l mr2" title="Github link">
+    <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+  </a>
+
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">What I Learned Building Ready Set SQL</h1>
+        
+      </div>
+    </div>
+  </header>
+
+
+    <main class="pb7" role="main">
+      
+  <div class="flex-l mt2 mw8 center">
+    <article class="center cf pv5 ph3 ph4-ns mw7">
+      <header>
+        <p class="f6 b helvetica tracked">
+          POSTS
+        </p>
+        <h1 class="f1">
+          What I Learned Building Ready Set SQL
+        </h1>
+      </header>
+      <div class="nested-copy-line-height lh-copy f4 nested-links nested-img mid-gray">
+        
+
+<p><a href="http://www.readysetsql.com/">Ready Set SQL</a> is a side project I started in the Fall of 2011. At the time I was teaching myself as I went, and also using it as a platform for learning all the fancy HTML/JS/CSS technologies I had been reading about but never actually done anything with.</p>
+
+<p>It&rsquo;s now Summer 2014, and Ready Set SQL is mostly finished. Or at least it&rsquo;s as finished as it&rsquo;ll ever be. Here are my own thoughts on how things went and what I&rsquo;d do differently if I restarted the project for a fourth time.</p>
+
+<h2 id="regarding-frameworks-and-libraries">Regarding frameworks and libraries</h2>
+
+<p>When I started this side project, I sought out a bunch of libraries and frameworks to use. At the time I had been reading a lot about various web trends, so I used Ready Set SQL as a platform to experiment with a lot of things. I started with a traditional Express.js app, with a mix of server-side rendering with jQuery/javascript running the interactive front end stuff.
+Then I got the bug to make it a purely client-side app, and tried a little Knockout. And then Backbone.</p>
+
+<p>Shortly after doing that, I read posts about people migrating away from client-side web apps for various reasons. I could relate to some of them and realized it wasn&rsquo;t a good fit for what I was building, so began rewriting things again.</p>
+
+<p>The next round was a combo static-html thing with some server side stuff. It was cool but the work flow got kind of clunky. Especially since I decided to split the repos (one for the static html content and generators, the other for the web-service and database).</p>
+
+<p>In the end I went back to what I knew and what I had started with: a traditional Express.js app with jQuery and my own javascript objects.</p>
+
+<h2 id="i-should-have-finished-the-first-iteration-before-starting-the-second">I should have finished the first iteration before starting the second</h2>
+
+<p>One of the reasons it took so long to get Ready Set SQL to where it is now was because of the time I spent reworking things. In total, I probably rewrote the application 4 times.</p>
+
+<p>In hindsight I wish I would have completed the first iteration before starting the second. Each time I reworked the first half of the project, I delayed learning about the challenges that would appear during the second half.</p>
+
+<h2 id="i-should-have-written-the-lessons-before-i-wrote-the-tool">I should have written the lessons before I wrote the tool</h2>
+
+<p>In all the lessons I&rsquo;ve written in the lesson editor I built, I&rsquo;ve only used about half the features. Little did I know that I would stick to a certain format for the lessons, and not actually need half the stuff I was building.</p>
+
+<p>Basically, <em>You Ain&rsquo;t Gonna Need It</em>. Figure out what you need first. Then build it. And only build what you need.</p>
+
+<p>Another saying that applies is <em>form follows function</em>. It was challenging to build a tool to build lessons when I wasn&rsquo;t quite sure what the lessons would be like in the first place.</p>
+
+<h2 id="the-lesson-viewer-might-not-have-been-the-best-approach">The lesson viewer might not have been the best approach</h2>
+
+<p>Writing the lessons, I discovered I wanted to be more visual with certain things. I wanted to have SQL queries out on the page, with hand written notes pointing things out. Maybe a .gif of how a join works. Maybe more narrative, who knows.</p>
+
+<p>What I know now though is that the lesson viewer setup demands lessons be a certain kind of way. Otherwise it feels awkward. The lesson viewer is set up in a way that expects the user to always be writing SQL. This works I guess if they were always going to write SQL, but sometimes I wish I had a better way to show and tell what the lesson is trying to teach.</p>
+
+<p>The lesson content pane was also too small. It wasn&rsquo;t quite enough space for what I wanted to do with it. A full-width page, where you scroll down and came across visualizations, pictures, and an interactive editor might have been a better approach.</p>
+
+<h2 id="i-enjoy-building-the-system-more-than-creating-the-lessons">I enjoy building the system more than creating the lessons</h2>
+
+<p>This was a big realization. When the application side of things was mostly finished, I wanted to move on. All I had to do is create the lessons, but I couldn&rsquo;t bring myself to do it. I kept procrastinating and putting it off.</p>
+
+<p>I realized through this process that teaching is hard. It gave me a new kind of respect towards teachers, as well as other developers who write to teach what they know.</p>
+
+<p>I also realized that teaching was something I didn&rsquo;t want to do without an audience. I built this tool knowing it&rsquo;d be valuable to some people, but I don&rsquo;t know any of those people. Not having a direct audience for feedback kind of killed any motivation I had to continue working on it.</p>
+
+<h2 id="i-work-on-side-projects-in-seasons">I work on side projects in seasons</h2>
+
+<p>Fall 2011 to Spring 2014 is a long time. In an age of people cranking out simple web-apps in a month or weekend, why did it take me 2.5 years!?</p>
+
+<p>In some ways looking at the time I spent on this project is depressing. However, looking at the activity over the course of 4 rewites and 2 git repos, I realized that I work on my side-projects in seasons. I&rsquo;ll have spans of a few days to a few weeks where I work on my projects a bunch, only to abruptly stop and not touch them for months.</p>
+
+      </div>
+    </article>
+    <aside class="ph3 mt2 mt6-ns">
+      
+
+
+
+
+
+
+
+  <div class="bg-light-gray pa3">
+    <ul>
+      <li class="list b mb3">
+        1 More Posts
+      </li>
+      
+        <li class="list f5 w-100 hover-bg-white nl1">
+          
+          <a href="/posts/building-ready-set-sql/" class="link ph2 pv2 db black o-50">
+            What I Learned Building Ready Set SQL
+          </a>
+        </li>
+      
+        <li class="list f5 w-100 hover-bg-white nl1">
+          
+          <a href="/posts/dashboard-holy-grail/" class="link ph2 pv2 db black">
+            Dashboard Holy Grail
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+    </aside>
+  </div>
+
+    </main>
+    <footer class="bg-near-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://rickbergfalk.github.io/" >
+    &copy; 2017 Rick Bergfalk
+  </a>
+  
+
+
+
+  <a href="https://twitter.com/rickbergfalk" class="link-transition twitter link dib z-999 pt3 pt0-l mr2" title="Twitter link">
+    <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+  </a>
+
+
+
+
+
+  <a href="https://github.com/rickbergfalk" class="link-transition github link dib z-999 pt3 pt0-l mr2" title="Github link">
+    <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+  </a>
+
+
+  </div>
+</footer>
+
+    <script src="http://rickbergfalk.github.io/dist/app.bundle.js" async></script>
+
+  </body>
+</html>

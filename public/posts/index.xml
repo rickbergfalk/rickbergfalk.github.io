@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Rick Bergfalk</title>
+    <link>http://rickbergfalk.github.io/posts/</link>
+    <description>Recent content in Posts on Rick Bergfalk</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 12 Jun 2014 20:01:24 -0500</lastBuildDate>
+    
+	<atom:link href="http://rickbergfalk.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>What I Learned Building Ready Set SQL</title>
+      <link>http://rickbergfalk.github.io/posts/building-ready-set-sql/</link>
+      <pubDate>Thu, 12 Jun 2014 20:01:24 -0500</pubDate>
+      
+      <guid>http://rickbergfalk.github.io/posts/building-ready-set-sql/</guid>
+      <description>Ready Set SQL is a side project I started in the Fall of 2011. At the time I was teaching myself as I went, and also using it as a platform for learning all the fancy HTML/JS/CSS technologies I had been reading about but never actually done anything with.
+It&amp;rsquo;s now Summer 2014, and Ready Set SQL is mostly finished. Or at least it&amp;rsquo;s as finished as it&amp;rsquo;ll ever be.</description>
+    </item>
+    
+    <item>
+      <title>Dashboard Holy Grail</title>
+      <link>http://rickbergfalk.github.io/posts/dashboard-holy-grail/</link>
+      <pubDate>Mon, 30 Sep 2013 20:01:24 -0500</pubDate>
+      
+      <guid>http://rickbergfalk.github.io/posts/dashboard-holy-grail/</guid>
+      <description>What is it about the Business Intelligence that drives people (including myself) to find a universal one-size-fits-all solution? Is it because we&amp;rsquo;re tired of handling the endless onslaught of business requests? Is it because report writing eventually becomes extremely tedious? Is it because we start to feel we have a better understanding of business reporting requirements than the ones that write up the requirements?
+Several months ago I decided to jump in and build that thing that&amp;rsquo;s been nagging my brain for several years.</description>
+    </item>
+    
+  </channel>
+</rss>
