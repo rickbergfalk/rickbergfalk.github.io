@@ -2,7 +2,6 @@
 title: What I Learned Building Ready Set SQL  
 date: 2014-06-12T20:01:24-05:00
 background_color_class: bg-blue
-featured_image: '/images/gohugo-default-sample-hero-image.jpg'
 ---
 
 [Ready Set SQL](http://www.readysetsql.com/) is a side project I started in the Fall of 2011. At the time I was teaching myself as I went, and also using it as a platform for learning all the fancy HTML/JS/CSS technologies I had been reading about but never actually done anything with.
