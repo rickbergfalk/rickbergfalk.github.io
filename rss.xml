@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[sql-in-js]]></title><description><![CDATA[
+      This is maybe my 10th attempt at a blog. 
+      All I want is a place to put my thoughts. 
+      I'm writing for me not you. 
+      That's what I'm telling myself this time hope this works.]]></description><link>https://gatsby-starter-blog-demo.netlify.com/</link><generator>RSS for Node</generator><lastBuildDate>Sat, 27 Apr 2019 15:09:03 GMT</lastBuildDate><item><title><![CDATA[Hello World]]></title><description><![CDATA[New blog in Gatsby!]]></description><link>https://gatsby-starter-blog-demo.netlify.com//20190420-hello-world/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com//20190420-hello-world/</guid><pubDate>Sat, 27 Apr 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;New blog in Gatsby!&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/4a9773549091c227cd2eb82ccd9c5e3a/c5a17/gatsby-icon.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 512px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 100%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsSAAALEgHS3X78AAAD2klEQVQ4y3WUW2xUVRSGDyY+8MCLTxofvNNWqPY61Wgk4IvxEmI1ktpxOm2n01IKCg8gCYpGgxgkpTB3LjOlnaYNDQGaaC0kpbaVS0molWYql9SMGDWxRBrajt3nrOX6d+cMo5aTrOx99uXba61/7W14i0MGvrqikOEtDt+HvqcgeH+DI/LO+rKDnQ2lkUmZU2JmfWkkKWPdMlcp/0uxFnvqisJGum/YnSVNLxy2+2tlQ6KhKMrVuRF2LfezpyDEnsIQu3L87M6JcENhlGXNDVlbYRh3GRlqFmzXBkeM3Xkh3vTSEdWxe1D9OJy0bl6bopvXp2j83C/Utfd7tXl1TLlzg9zkOMreknBLFtTIhAnYprI4V+X5zOjOfnM+pYiZCbCRvut0sfcaJX/6U49ZpsXxLwbNqqd9qqm0netLwr502jJeroVngPVELlmyiS/3T9KONztJNrFz+X5trjwfb3+jg85/fRVg7u+6QrJXpT11GlkCJBAmPMPCk8ERqnxqP7tX+HE6ixgLJv3qlX6ueHwfH2s+R5ZF/PFbXWZtfhhzSYEvM6AmBGh68bD6e07R6MDP5BSYNw2SRf8yjEloIlSQt73aTmjh5YbSVrQeA6UBNeVEhfxsfz1O8EwO0huzYfa/9lqs5pkAWrKBMt9joM6qcgMc+/Qsckd9bT/oXGlIyV1Idlv7bFAbvJOWxKz1JUcwPw5lFMJY92gzdXw5pJN9Oj7GrtwDi0LhmZRUxj5YHaP3V0WpvlhHNGNIwZqNzx/i0NY+qnyyhdp3fceLQQFyiyAflXfy9NQsp2bneWY6xTO3UzQx8ivVFeq0zBm4TrgBKNqhkxNU/uAeju8e/B8UUSDMzWti3N1ynk/4LyLvfOevOZq88odVu1JXQQKidEMUgWhRvm0dpbcf3rs4VLxE3t6T/4rH9rHkn01lUU/4kgmGCPkNysaJu7nl5VY1fWuWbWHuBYX6jc8dZEkPD3SP65x/+Fpc1Rfo+90IUZbiouNuiii6sO8JFfVr8gO6sGOf9GvYcd8F05UTgLe/CesB++pV4PpI0tWZjjGyob2to1z+0FdsC4VDRFE+e2zBs+FTE1SdH5jf6GiDcF4btvA4yKux0dGuoZ17hs07t1MaOnQiQe8+0ULiqX4Y0sbHD1wwF2Bx5DaaecIyj6J8eDXgaZWEv/WVNoXbc2Psd+voZwO07pFmavt8wOqNXTYxhzDhmQ3775u4JGvQKTlNQigoh3JoLDukFa1ZEdZjWgDJmaz1LgILZR5He7CuMLRMoB4pqR7xYFz+Z1C0UosJlAbUtAXAHnsfGP8An71yIvslifEAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Gatsby icon&quot;
+        title=&quot;&quot;
+        src=&quot;/static/4a9773549091c227cd2eb82ccd9c5e3a/c5a17/gatsby-icon.png&quot;
+        srcset=&quot;/static/4a9773549091c227cd2eb82ccd9c5e3a/cf440/gatsby-icon.png 148w,
+/static/4a9773549091c227cd2eb82ccd9c5e3a/d2d38/gatsby-icon.png 295w,
+/static/4a9773549091c227cd2eb82ccd9c5e3a/c5a17/gatsby-icon.png 512w&quot;
+        sizes=&quot;(max-width: 512px) 100vw, 512px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;</content:encoded></item><item><title><![CDATA[What I Learned Building Ready Set SQL]]></title><description><![CDATA[Ready Set SQL is a side project I started in the Fall of 2011. At the time I was teaching myself as I went, and also using it as a platform…]]></description><link>https://gatsby-starter-blog-demo.netlify.com//building-ready-set-sql/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com//building-ready-set-sql/</guid><pubDate>Fri, 13 Jun 2014 01:01:24 GMT</pubDate><content:encoded>&lt;p&gt;&lt;a href=&quot;http://www.readysetsql.com/&quot;&gt;Ready Set SQL&lt;/a&gt; is a side project I started in the Fall of 2011. At the time I was teaching myself as I went, and also using it as a platform for learning all the fancy HTML/JS/CSS technologies I had been reading about but never actually done anything with.&lt;/p&gt;
+&lt;p&gt;It’s now Summer 2014, and Ready Set SQL is mostly finished. Or at least it’s as finished as it’ll ever be. Here are my own thoughts on how things went and what I’d do differently if I restarted the project for a fourth time.&lt;/p&gt;
+&lt;h2&gt;Regarding frameworks and libraries&lt;/h2&gt;
+&lt;p&gt;When I started this side project, I sought out a bunch of libraries and frameworks to use. At the time I had been reading a lot about various web trends, so I used Ready Set SQL as a platform to experiment with a lot of things. I started with a traditional Express.js app, with a mix of server-side rendering with jQuery/javascript running the interactive front end stuff.
+Then I got the bug to make it a purely client-side app, and tried a little Knockout. And then Backbone.&lt;/p&gt;
+&lt;p&gt;Shortly after doing that, I read posts about people migrating away from client-side web apps for various reasons. I could relate to some of them and realized it wasn’t a good fit for what I was building, so began rewriting things again.&lt;/p&gt;
+&lt;p&gt;The next round was a combo static-html thing with some server side stuff. It was cool but the work flow got kind of clunky. Especially since I decided to split the repos (one for the static html content and generators, the other for the web-service and database).&lt;/p&gt;
+&lt;p&gt;In the end I went back to what I knew and what I had started with: a traditional Express.js app with jQuery and my own javascript objects.&lt;/p&gt;
+&lt;h2&gt;I should have finished the first iteration before starting the second&lt;/h2&gt;
+&lt;p&gt;One of the reasons it took so long to get Ready Set SQL to where it is now was because of the time I spent reworking things. In total, I probably rewrote the application 4 times.&lt;/p&gt;
+&lt;p&gt;In hindsight I wish I would have completed the first iteration before starting the second. Each time I reworked the first half of the project, I delayed learning about the challenges that would appear during the second half.&lt;/p&gt;
+&lt;h2&gt;I should have written the lessons before I wrote the tool&lt;/h2&gt;
+&lt;p&gt;In all the lessons I’ve written in the lesson editor I built, I’ve only used about half the features. Little did I know that I would stick to a certain format for the lessons, and not actually need half the stuff I was building.&lt;/p&gt;
+&lt;p&gt;Basically, &lt;em&gt;You Ain’t Gonna Need It&lt;/em&gt;. Figure out what you need first. Then build it. And only build what you need.&lt;/p&gt;
+&lt;p&gt;Another saying that applies is &lt;em&gt;form follows function&lt;/em&gt;. It was challenging to build a tool to build lessons when I wasn’t quite sure what the lessons would be like in the first place.&lt;/p&gt;
+&lt;h2&gt;The lesson viewer might not have been the best approach&lt;/h2&gt;
+&lt;p&gt;Writing the lessons, I discovered I wanted to be more visual with certain things. I wanted to have SQL queries out on the page, with hand written notes pointing things out. Maybe a .gif of how a join works. Maybe more narrative, who knows.&lt;/p&gt;
+&lt;p&gt;What I know now though is that the lesson viewer setup demands lessons be a certain kind of way. Otherwise it feels awkward. The lesson viewer is set up in a way that expects the user to always be writing SQL. This works I guess if they were always going to write SQL, but sometimes I wish I had a better way to show and tell what the lesson is trying to teach.&lt;/p&gt;
+&lt;p&gt;The lesson content pane was also too small. It wasn’t quite enough space for what I wanted to do with it. A full-width page, where you scroll down and came across visualizations, pictures, and an interactive editor might have been a better approach.&lt;/p&gt;
+&lt;h2&gt;I enjoy building the system more than creating the lessons&lt;/h2&gt;
+&lt;p&gt;This was a big realization. When the application side of things was mostly finished, I wanted to move on. All I had to do is create the lessons, but I couldn’t bring myself to do it. I kept procrastinating and putting it off.&lt;/p&gt;
+&lt;p&gt;I realized through this process that teaching is hard. It gave me a new kind of respect towards teachers, as well as other developers who write to teach what they know.&lt;/p&gt;
+&lt;p&gt;I also realized that teaching was something I didn’t want to do without an audience. I built this tool knowing it’d be valuable to some people, but I don’t know any of those people. Not having a direct audience for feedback kind of killed any motivation I had to continue working on it.&lt;/p&gt;
+&lt;h2&gt;I work on side projects in seasons&lt;/h2&gt;
+&lt;p&gt;Fall 2011 to Spring 2014 is a long time. In an age of people cranking out simple web-apps in a month or weekend, why did it take me 2.5 years!?&lt;/p&gt;
+&lt;p&gt;In some ways looking at the time I spent on this project is depressing. However, looking at the activity over the course of 4 rewites and 2 git repos, I realized that I work on my side-projects in seasons. I’ll have spans of a few days to a few weeks where I work on my projects a bunch, only to abruptly stop and not touch them for months.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Dashboard Holy Grail]]></title><description><![CDATA[What is it about the Business Intelligence that drives people (including myself) to find a universal one-size-fits-all solution? Is it…]]></description><link>https://gatsby-starter-blog-demo.netlify.com//dashboard-holy-grail/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com//dashboard-holy-grail/</guid><pubDate>Tue, 01 Oct 2013 01:01:24 GMT</pubDate><content:encoded>&lt;p&gt;What is it about the Business Intelligence that drives people (including myself) to find a universal one-size-fits-all solution? Is it because we’re tired of handling the endless onslaught of business requests? Is it because report writing eventually becomes extremely tedious? Is it because we start to feel we have a better understanding of business reporting requirements than the ones that write up the requirements?&lt;/p&gt;
+&lt;p&gt;Several months ago I decided to jump in and build that thing that’s been nagging my brain for several years. It was a dashboard/database/web-app for reporting Key Performance Indicators (KPIs) in a nice way. The design in my head was simple. It was responsive. Flexible.&lt;/p&gt;
+&lt;p&gt;I doodled little diagrams. Mocked out the data structures. Started building things in Node.js. Things eventually got serious, and I whipped up a very limited prototype.&lt;/p&gt;
+&lt;p&gt;Unfortunately, as I played around with the result I started to ponder the usefulness of this tool.&lt;/p&gt;
+&lt;p&gt;Since all the KPIs were displayed in the same format, I began to find myself distracted by the labels and numbers, looking at the collection of sparklines. In a way the graphics were doing what they were supposed to be doing, giving me quick little insights to the trend of data. But the information I was looking at as a whole didn’t seem very useful.&lt;/p&gt;
+&lt;p&gt;The results felt empty. I saw the numbers and their trends on the screen, but it &lt;em&gt;conveyed no meaning to me.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;And I don’t know if that is a fault of the tool or me not having a use for the tool. The data I loaded up wasn’t 100% KPI related - some of it was more operational data, which really doesn’t fit well with a KPI reporting format.&lt;/p&gt;
+&lt;p&gt;I can’t get the idea out of my head. I can build a prototype but I ultimately have no use for it. I have no way of validating this concept.&lt;/p&gt;</content:encoded></item></channel></rss>
