@@ -2,7 +2,74 @@
       This is maybe my 10th attempt at a blog. 
       All I want is a place to put my thoughts. 
       I'm writing for me not you. 
-      That's what I'm telling myself this time hope this works.]]></description><link>https://gatsby-starter-blog-demo.netlify.com/</link><generator>RSS for Node</generator><lastBuildDate>Sat, 27 Apr 2019 16:15:30 GMT</lastBuildDate><item><title><![CDATA[Switching to Gatsby]]></title><description><![CDATA[Hello its my new blog in Gatsby!The reason for starting this thing up is that I want to blog more about design decisions I have to make…]]></description><link>https://gatsby-starter-blog-demo.netlify.com//20190420-hello-world/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com//20190420-hello-world/</guid><pubDate>Sat, 27 Apr 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Hello its my new blog in Gatsby!&lt;/p&gt;
+      That's what I'm telling myself this time hope this works.]]></description><link>https://gatsby-starter-blog-demo.netlify.com/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 28 Apr 2019 23:45:05 GMT</lastBuildDate><item><title><![CDATA[Bundle Battle 1 - Bundle Analysis]]></title><description><![CDATA[SQLPad 3 has gotten bloated and I’m gonna fight it.The SQLPad build for upcoming version 3 rework has hit 2.68 MB.That’s minified but…]]></description><link>https://gatsby-starter-blog-demo.netlify.com//20190428-bundle-battle/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com//20190428-bundle-battle/</guid><pubDate>Sun, 28 Apr 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;SQLPad 3 has gotten bloated and I’m gonna fight it.&lt;/p&gt;
+&lt;p&gt;The SQLPad build for upcoming version 3 rework has hit 2.68 MB.&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/ba9c25e50b9df6519728cb64d14fdc3d/9d68f/bundle-20190422.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 53.603335318642046%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAABM0lEQVQoz3WSh66DMAxF8/8fyV4tGwqljPrpWDKifWoky+vm2o7jHo+HNE0j4zjKNE0yz7Os6/ohwzDI7XYTsN+51+slz+fz9B0Ex3HIvu+S57lEUaSgbds+yCla17XGwZLD7rpOsiw7SZWQ836/VSC3A/HVvx5y4K8H7D9CE7tEN79yECB0anFHq78OIxjwu/tlWdTnXWkKvyxLcfbQVGQxfd+rjbAkFlJV1bk4dNu2cr/fVePzjugkScTByjKKotBNEoQAnxykFEFTHGwcx0pCAe6ANbxjcwRxIDJyBJvuGQ0NFkyaptoRMXy6xWcaB5l9lzAMVXMBwQ+CQLXv+2ozAZqvAoa45eByVpWOAKGNjMsWx0bMhsTzvLMJ8x0PC6G1jjA+mopXYRI0OXtz89EU+wOtcEj9Wm/oFAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;The initial bundle&quot;
+        title=&quot;&quot;
+        src=&quot;/static/ba9c25e50b9df6519728cb64d14fdc3d/b9e4f/bundle-20190422.png&quot;
+        srcset=&quot;/static/ba9c25e50b9df6519728cb64d14fdc3d/cf440/bundle-20190422.png 148w,
+/static/ba9c25e50b9df6519728cb64d14fdc3d/d2d38/bundle-20190422.png 295w,
+/static/ba9c25e50b9df6519728cb64d14fdc3d/b9e4f/bundle-20190422.png 590w,
+/static/ba9c25e50b9df6519728cb64d14fdc3d/f9b6a/bundle-20190422.png 885w,
+/static/ba9c25e50b9df6519728cb64d14fdc3d/2d849/bundle-20190422.png 1180w,
+/static/ba9c25e50b9df6519728cb64d14fdc3d/bbefa/bundle-20190422.png 1770w,
+/static/ba9c25e50b9df6519728cb64d14fdc3d/9d68f/bundle-20190422.png 3358w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;That’s minified but uncompressed. Once gzipped Create-React-App says it’ll squish down to 723.48 KB, which sounds better but doesn’t change the fact it is still 2.68 MB of JS that needs to parse, compile, and execute. SQLPad as become one of &lt;em&gt;those&lt;/em&gt; JavaScript apps the Chrome dev relations team tweets and blogs about.&lt;/p&gt;
+&lt;p&gt;I suppose one could argue that bundle size is not &lt;em&gt;that&lt;/em&gt; important for an app like SQLPad. The target device is not mobile, and the experience is more of an application where you write SQL and analyze data, not a site where you consume content.&lt;/p&gt;
+&lt;p&gt;Still, there is opportunity to shave off some larger-than-necessary libraries and be a bit smarter and managing the bundle budget.&lt;/p&gt;
+&lt;h2&gt;Observations&lt;/h2&gt;
+&lt;p&gt;Looking at the above bundle analysis a few things quickly became apparent.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Adding Antd brought the size up real quick.&lt;/p&gt;
+&lt;p&gt;This wasn’t instant, as the icons weren’t all included until 3.9 (and I think I adopted antd prior to that if I recall). Still I was not aware antd was made up of many smaller rc-components. It accounts for at least 750 KB of the bundle.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;react-virtualized should be swapped out with react-window&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Moment is fairly large and is overkill for what I am using it for (currently just date formatting)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;SQL formatting doesn’t need to happen in the browser - that could become an API call&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;The Goal&lt;/h2&gt;
+&lt;p&gt;The core SQLPad experience is centered around 2 JavaScript libraries&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ace editor (422 KB + 25 KB for its React wrapper)&lt;/li&gt;
+&lt;li&gt;Taucharts (379 KB + 170 KB for its d3 dependencies)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Because this is a React project, there’s also react and react-dom adding another 112 KB.&lt;/p&gt;
+&lt;p&gt;This puts the core SQLPad project without my code or any of the smaller libraries or component libraries at about 1100 KB.&lt;/p&gt;
+&lt;p&gt;Before officially publishing SQLPad v3, I’d like to get the bundle size under 1.5 MB uncompressed at a minimum with 1.25 MB as a stretch goal.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Switching to Gatsby]]></title><description><![CDATA[Hello its my new blog in Gatsby!The reason for starting this thing up is that I want to blog more about design decisions I have to make…]]></description><link>https://gatsby-starter-blog-demo.netlify.com//20190420-hello-world/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com//20190420-hello-world/</guid><pubDate>Sat, 27 Apr 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Hello its my new blog in Gatsby!&lt;/p&gt;
 &lt;p&gt;
   &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -46,7 +113,7 @@
 &lt;p&gt;I mean syntax highlighting is built in my default. That’s cool.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;-- Look how nice this SQL looks&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;FROM&lt;/span&gt; its_pretty_cool&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[What I Learned Building Ready Set SQL]]></title><description><![CDATA[Ready Set SQL is a side project I started in the Fall of 2011. At the time I was teaching myself as I went, and also using it as a platform…]]></description><link>https://gatsby-starter-blog-demo.netlify.com//building-ready-set-sql/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com//building-ready-set-sql/</guid><pubDate>Fri, 13 Jun 2014 01:01:24 GMT</pubDate><content:encoded>&lt;p&gt;&lt;a href=&quot;http://learnsomesql.herokuapp.com&quot;&gt;Ready Set SQL&lt;/a&gt; is a side project I started in the Fall of 2011. At the time I was teaching myself as I went, and also using it as a platform for learning all the fancy HTML/JS/CSS technologies I had been reading about but never actually done anything with.&lt;/p&gt;
+&lt;span class=&quot;token keyword&quot;&gt;FROM&lt;/span&gt; its_pretty_cool&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[What I Learned Building Ready Set SQL]]></title><description><![CDATA[Ready Set SQL is a side project I started in the Fall of 2011. At the time I was teaching myself as I went, and also using it as a platform…]]></description><link>https://gatsby-starter-blog-demo.netlify.com//20140612-building-ready-set-sql/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com//20140612-building-ready-set-sql/</guid><pubDate>Fri, 13 Jun 2014 01:01:24 GMT</pubDate><content:encoded>&lt;p&gt;&lt;a href=&quot;http://learnsomesql.herokuapp.com&quot;&gt;Ready Set SQL&lt;/a&gt; is a side project I started in the Fall of 2011. At the time I was teaching myself as I went, and also using it as a platform for learning all the fancy HTML/JS/CSS technologies I had been reading about but never actually done anything with.&lt;/p&gt;
 &lt;p&gt;It’s now Summer 2014, and Ready Set SQL is mostly finished. Or at least it’s as finished as it’ll ever be. Here are my own thoughts on how things went and what I’d do differently if I restarted the project for a fourth time.&lt;/p&gt;
 &lt;h2&gt;Regarding frameworks and libraries&lt;/h2&gt;
 &lt;p&gt;When I started this side project, I sought out a bunch of libraries and frameworks to use. At the time I had been reading a lot about various web trends, so I used Ready Set SQL as a platform to experiment with a lot of things. I started with a traditional Express.js app, with a mix of server-side rendering with jQuery/javascript running the interactive front end stuff.
