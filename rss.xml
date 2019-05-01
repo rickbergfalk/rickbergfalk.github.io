@@ -2,7 +2,103 @@
       This is maybe my 10th attempt at a blog. 
       All I want is a place to put my thoughts. 
       I'm writing for me not you. 
-      That's what I'm telling myself this time hope this works.]]></description><link>https://gatsby-starter-blog-demo.netlify.com/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 28 Apr 2019 23:45:05 GMT</lastBuildDate><item><title><![CDATA[Bundle Battle 1 - Bundle Analysis]]></title><description><![CDATA[SQLPad 3 has gotten bloated and I’m gonna fight it.The SQLPad build for upcoming version 3 rework has hit 2.68 MB.That’s minified but…]]></description><link>https://gatsby-starter-blog-demo.netlify.com//20190428-bundle-battle/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com//20190428-bundle-battle/</guid><pubDate>Sun, 28 Apr 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;SQLPad 3 has gotten bloated and I’m gonna fight it.&lt;/p&gt;
+      That's what I'm telling myself this time hope this works.]]></description><link>https://gatsby-starter-blog-demo.netlify.com/</link><generator>RSS for Node</generator><lastBuildDate>Wed, 01 May 2019 05:15:11 GMT</lastBuildDate><item><title><![CDATA[Bundle Battle 3 - antd]]></title><description><![CDATA[This post is part of a series detailing the work involved to slim down SQLPad’s JavaScript bundle size. Read the introductory post.First…]]></description><link>https://gatsby-starter-blog-demo.netlify.com//20190430-bundle-battle-3/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com//20190430-bundle-battle-3/</guid><pubDate>Tue, 30 Apr 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;em&gt;This post is part of a series detailing the work involved to slim down SQLPad’s JavaScript bundle size. &lt;a href=&quot;/20190428-bundle-battle/&quot;&gt;Read the introductory post&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;First some love for antd&lt;/h2&gt;
+&lt;p&gt;Before getting into this one I want to express some appreciation for &lt;a href=&quot;https://ant.design/&quot;&gt;Ant Design&lt;/a&gt; and antd.&lt;/p&gt;
+&lt;p&gt;antd is an amazing component library. This is subjective sure, but of the various React component libraries out there, I personally like the look of antd the most. It has a nice balance of having a modern clean look without being too flat. It has a nice density about it. The component APIs felt right and it was a pleasure using the components.&lt;/p&gt;
+&lt;p&gt;And there are so many components. All the usual components are there like buttons and inputs, but then there are &lt;a href=&quot;https://ant.design/components/cascader/&quot;&gt;cascading selections&lt;/a&gt; and &lt;a href=&quot;https://ant.design/components/steps/&quot;&gt;steps&lt;/a&gt; and &lt;a href=&quot;https://ant.design/components/auto-complete/&quot;&gt;AutoCompletes&lt;/a&gt; and &lt;a href=&quot;https://ant.design/components/mention/&quot;&gt;mentions&lt;/a&gt; and &lt;a href=&quot;https://ant.design/components/select/&quot;&gt;selects with tag modes&lt;/a&gt; and &lt;a href=&quot;https://ant.design/components/calendar/&quot;&gt;a calendar&lt;/a&gt; and &lt;a href=&quot;https://ant.design/components/tree/&quot;&gt;trees&lt;/a&gt; and &lt;a href=&quot;https://ant.design/components/timeline/&quot;&gt;timelines&lt;/a&gt; and &lt;a href=&quot;https://ant.design/components/drawer/&quot;&gt;drawers&lt;/a&gt; and my favorite &lt;a href=&quot;https://ant.design/components/modal/&quot;&gt;modals that animate open from the click location&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you need a component, antd probably already has it.&lt;/p&gt;
+&lt;p&gt;Unfortunately all that comes with a cost of a larger JavaScript bundle.&lt;/p&gt;
+&lt;p&gt;When I set out to update SQLPad’s UI, I initially decided on antd because I wanted a library that had everything. I wanted the design to be cohesive, and I wanted it to be easy for others to expand on the UI if necessary. Instead of dealing with a random assortment of components I built, someone could simply take from the component library of antd.&lt;/p&gt;
+&lt;p&gt;I think that’s a great benefit for a project, but I’m not sure if it is worth the cost for SQLPad.&lt;/p&gt;
+&lt;p&gt;I ended up building my own tree and table components. The other big component experiences are a code editor and a charting library (also not antd).&lt;/p&gt;
+&lt;p&gt;I should have maybe thought about this a bit more before taking on a UI component conversion, but my component needs are pretty basic. Buttons, inputs, modals, toasts, and some tabs… I’m set. I don’t need a lot of the fancy antd components listed above. For those I do need, I can expand on some primitive react UI libraries like &lt;a href=&quot;https://ui.reach.tech/&quot;&gt;Reach UI&lt;/a&gt; and &lt;a href=&quot;https://github.com/downshift-js/downshift&quot;&gt;downshift&lt;/a&gt; and still keep the bundle small.&lt;/p&gt;
+&lt;h2&gt;Removing antd&lt;/h2&gt;
+&lt;p&gt;This is going to take a while, but I’ve settled on a plan.&lt;/p&gt;
+&lt;p&gt;Fortunately for me, antd uses old-fashioned CSS to style its components.&lt;/p&gt;
+&lt;p&gt;Since I like the look and feel of antd, I’ve decided to copy the pieces of style I like for components like buttons and inputs. I’m not going to aim for implementing 100% of it, just the basics. Doing this will also give me some freedom to alter the styles as I see fit for some non-antd use cases (like the query editor toolbar).&lt;/p&gt;
+&lt;p&gt;I’ve just decided this post is going to be like a live-blog of this effort because its going to take a while.&lt;/p&gt;
+&lt;h3&gt;Buttons&lt;/h3&gt;
+&lt;p&gt;The Button component was the first to convert. It invovled wrapping a regular html button with some css and logic around when to use what class. The CSS ripped from antd and lightly modified.&lt;/p&gt;
+&lt;p&gt;With CSS module support in create-react-app 2+ I figured I’d give it a shot. I’m not 100% sure how to manage colors across css files (is it still like old global CSS where you copy paste the colors everywhere?)&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; React &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;react&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; styles &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;./Button.module.css&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Button&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; children&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; type&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; className&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;rest &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; classNames &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;styles&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;btn&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;type &lt;span class=&quot;token operator&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;primary&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    classNames&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;styles&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;primary&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;type &lt;span class=&quot;token operator&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;danger&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    classNames&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;styles&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;danger&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;className&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    classNames&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;className&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;button className&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;classNames&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot; &quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;rest&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;children&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;button&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Select&lt;/h3&gt;
+&lt;p&gt;For the Select component, I’ve opted to just use the standard HTML select components, and deal with the fact that the options &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#Styling_with_CSS&quot;&gt;won’t match the rest of the design&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;TO BE CONTINUED…&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;              bundle  ~2.58 MB
+-               antd  ~?.?? MB
++       ?? ??? ?????  ~?.?? MB
+-------------------------------
+          new bundle  ~?.?? MB&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Bundle Battle 2 - react-virtualized, react-window]]></title><description><![CDATA[This post is part of a series detailing the work involved to slim down SQLPad’s JavaScript bundle size. Read the introductory post.React…]]></description><link>https://gatsby-starter-blog-demo.netlify.com//20190429-bundle-battle-2/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com//20190429-bundle-battle-2/</guid><pubDate>Mon, 29 Apr 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;em&gt;This post is part of a series detailing the work involved to slim down SQLPad’s JavaScript bundle size. &lt;a href=&quot;/20190428-bundle-battle/&quot;&gt;Read the introductory post&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/bvaughn/react-virtualized&quot;&gt;React-virtualized&lt;/a&gt; by Brian Vaughn is a collection of lower level components to help efficiently render large lists and tables (thousands of rows) without crushing React or the browser. This is primarily for applications where you do not want to paginate your data, and instead show all of it. Perfect for an app that renders a large table of SQL query results!&lt;/p&gt;
+&lt;p&gt;It was initially brought into SQLPad to assist in building a custom data grid component to replace &lt;a href=&quot;https://github.com/schrodinger/fixed-data-table-2&quot;&gt;fixed-data-table-2&lt;/a&gt; which itself was a continuation of the abandoned fixed-data-table component. At the time there were some performance issues and other quirks, so I decided to build my own data grid with react-virtualized.&lt;/p&gt;
+&lt;p&gt;Fortunately for me Brian is already on top of things, and has created &lt;a href=&quot;https://github.com/bvaughn/react-window&quot;&gt;react-window&lt;/a&gt;, an amazing spiritual successor of sorts to react-virtualized. It is a complete rewrite of react-virtualized with &lt;a href=&quot;https://github.com/bvaughn/react-window#how-is-react-window-different-from-react-virtualized&quot;&gt;a focus on making it smaller and faster, as well as improving the API&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/rickbergfalk/sqlpad/pull/427/files&quot;&gt;Swapping out react-virtualized for react-window&lt;/a&gt; shaved ~100 KB off the build (minified, uncompressed).&lt;/p&gt;
+&lt;p&gt;The data grid still feels fast, and I can vouch for the better API. The limitation of features has simplified the implementation and its really nice to work with.&lt;/p&gt;
+&lt;p&gt;Thanks Brian!&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;              bundle  ~2.68 MB
+-  react-virtualized  ~0.12 MB
++       react-window  ~0.02 MB
+-------------------------------
+          new bundle  ~2.58 MB&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/4913104bb0f919c3b87bc981fbbd5493/80f7c/bundle-20190429.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 50.90579710144928%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAABGklEQVQoz4WSBQrEQAxF5/6XLHU36prlBVK6sLCBNDo/VjcMg6zrKvM8S5qmUhSF2suyqA+Jz/M8aZpGtm17YuSVZSlVVT1vHB/ovm/puk4oYMRj/NB1XXKe56Mfx6H6NE0KbhhfgEamA8hj7Hcc4H3f5Rf9BXz7jSgCIHIcRx0Vm7G/AEmwjiASGI1kRqMA3bEWxsQGkJy2bSUMQ3EsGqPve8nzXJkH2DDxOI5V1nWtB/J9X6IokiRJNIaP42RZJo7LosAESMKHBPw9Jt3BHM8KAkT3TEGnjpNTnYBVAch0YgAgTbeCSDqlEYs5e0zrjPJun5iNBqOTZ4DkB0Ggu+M/RXe2bJaLziGw7f+CLcaI9q/C+Nk/jB/+AHFPAVQ98A6OAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Bundle minus react-virtualized&quot;
+        title=&quot;&quot;
+        src=&quot;/static/4913104bb0f919c3b87bc981fbbd5493/b9e4f/bundle-20190429.png&quot;
+        srcset=&quot;/static/4913104bb0f919c3b87bc981fbbd5493/cf440/bundle-20190429.png 148w,
+/static/4913104bb0f919c3b87bc981fbbd5493/d2d38/bundle-20190429.png 295w,
+/static/4913104bb0f919c3b87bc981fbbd5493/b9e4f/bundle-20190429.png 590w,
+/static/4913104bb0f919c3b87bc981fbbd5493/f9b6a/bundle-20190429.png 885w,
+/static/4913104bb0f919c3b87bc981fbbd5493/2d849/bundle-20190429.png 1180w,
+/static/4913104bb0f919c3b87bc981fbbd5493/bbefa/bundle-20190429.png 1770w,
+/static/4913104bb0f919c3b87bc981fbbd5493/80f7c/bundle-20190429.png 3312w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Bundle Battle 1 - Bundle Analysis]]></title><description><![CDATA[SQLPad 3 has gotten bloated and I’m gonna fight it.The SQLPad build for upcoming version 3 rework has hit 2.68 MB.That’s minified but…]]></description><link>https://gatsby-starter-blog-demo.netlify.com//20190428-bundle-battle/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com//20190428-bundle-battle/</guid><pubDate>Sun, 28 Apr 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;SQLPad 3 has gotten bloated and I’m gonna fight it.&lt;/p&gt;
 &lt;p&gt;The SQLPad build for upcoming version 3 rework has hit 2.68 MB.&lt;/p&gt;
 &lt;p&gt;
   &lt;a
@@ -47,19 +143,10 @@
 &lt;h2&gt;Observations&lt;/h2&gt;
 &lt;p&gt;Looking at the above bundle analysis a few things quickly became apparent.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Adding Antd brought the size up real quick.&lt;/p&gt;
-&lt;p&gt;This wasn’t instant, as the icons weren’t all included until 3.9 (and I think I adopted antd prior to that if I recall). Still I was not aware antd was made up of many smaller rc-components. It accounts for at least 750 KB of the bundle.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;react-virtualized should be swapped out with react-window&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Moment is fairly large and is overkill for what I am using it for (currently just date formatting)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;SQL formatting doesn’t need to happen in the browser - that could become an API call&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;Adding Antd brought the size up real quick. (antd, icons, and related rc-components account for at least 750 KB of the bundle)&lt;/li&gt;
+&lt;li&gt;react-virtualized should be swapped out with react-window&lt;/li&gt;
+&lt;li&gt;Moment is fairly large and is overkill for what I am using it for (currently just date formatting)&lt;/li&gt;
+&lt;li&gt;SQL formatting doesn’t need to happen in the browser - that could become an API call&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;The Goal&lt;/h2&gt;
 &lt;p&gt;The core SQLPad experience is centered around 2 JavaScript libraries&lt;/p&gt;
