@@ -2,26 +2,25 @@
       This is maybe my 10th attempt at a blog. 
       All I want is a place to put my thoughts. 
       I'm writing for me not you. 
-      That's what I'm telling myself this time hope this works.]]></description><link>https://gatsby-starter-blog-demo.netlify.com/</link><generator>RSS for Node</generator><lastBuildDate>Wed, 01 May 2019 05:15:11 GMT</lastBuildDate><item><title><![CDATA[Bundle Battle 3 - antd]]></title><description><![CDATA[This post is part of a series detailing the work involved to slim down SQLPad’s JavaScript bundle size. Read the introductory post.First…]]></description><link>https://gatsby-starter-blog-demo.netlify.com//20190430-bundle-battle-3/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com//20190430-bundle-battle-3/</guid><pubDate>Tue, 30 Apr 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;em&gt;This post is part of a series detailing the work involved to slim down SQLPad’s JavaScript bundle size. &lt;a href=&quot;/20190428-bundle-battle/&quot;&gt;Read the introductory post&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+      That's what I'm telling myself this time hope this works.]]></description><link>https://gatsby-starter-blog-demo.netlify.com/</link><generator>RSS for Node</generator><lastBuildDate>Wed, 15 May 2019 02:55:23 GMT</lastBuildDate><item><title><![CDATA[Bundle Battle 3 - antd]]></title><description><![CDATA[This post is part of a series detailing the work involved to slim down SQLPad’s JavaScript bundle size. Read the introductory post.First…]]></description><link>https://gatsby-starter-blog-demo.netlify.com//20190430-bundle-battle-3/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com//20190430-bundle-battle-3/</guid><pubDate>Tue, 14 May 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;em&gt;This post is part of a series detailing the work involved to slim down SQLPad’s JavaScript bundle size. &lt;a href=&quot;/20190428-bundle-battle/&quot;&gt;Read the introductory post&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;h2&gt;First some love for antd&lt;/h2&gt;
 &lt;p&gt;Before getting into this one I want to express some appreciation for &lt;a href=&quot;https://ant.design/&quot;&gt;Ant Design&lt;/a&gt; and antd.&lt;/p&gt;
-&lt;p&gt;antd is an amazing component library. This is subjective sure, but of the various React component libraries out there, I personally like the look of antd the most. It has a nice balance of having a modern clean look without being too flat. It has a nice density about it. The component APIs felt right and it was a pleasure using the components.&lt;/p&gt;
-&lt;p&gt;And there are so many components. All the usual components are there like buttons and inputs, but then there are &lt;a href=&quot;https://ant.design/components/cascader/&quot;&gt;cascading selections&lt;/a&gt; and &lt;a href=&quot;https://ant.design/components/steps/&quot;&gt;steps&lt;/a&gt; and &lt;a href=&quot;https://ant.design/components/auto-complete/&quot;&gt;AutoCompletes&lt;/a&gt; and &lt;a href=&quot;https://ant.design/components/mention/&quot;&gt;mentions&lt;/a&gt; and &lt;a href=&quot;https://ant.design/components/select/&quot;&gt;selects with tag modes&lt;/a&gt; and &lt;a href=&quot;https://ant.design/components/calendar/&quot;&gt;a calendar&lt;/a&gt; and &lt;a href=&quot;https://ant.design/components/tree/&quot;&gt;trees&lt;/a&gt; and &lt;a href=&quot;https://ant.design/components/timeline/&quot;&gt;timelines&lt;/a&gt; and &lt;a href=&quot;https://ant.design/components/drawer/&quot;&gt;drawers&lt;/a&gt; and my favorite &lt;a href=&quot;https://ant.design/components/modal/&quot;&gt;modals that animate open from the click location&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;If you need a component, antd probably already has it.&lt;/p&gt;
-&lt;p&gt;Unfortunately all that comes with a cost of a larger JavaScript bundle.&lt;/p&gt;
+&lt;p&gt;antd is an amazing component library. Of the various React component libraries out there, my favorite at the moment is antd. It has a clean modern look and a nice density about it, making it a great pick for more enterprisey applications. The components were a pleasure to work with.&lt;/p&gt;
+&lt;p&gt;And there are so many components. &lt;a href=&quot;https://ant.design/components/cascader/&quot;&gt;Cascading selections&lt;/a&gt; and &lt;a href=&quot;https://ant.design/components/steps/&quot;&gt;steps&lt;/a&gt; and &lt;a href=&quot;https://ant.design/components/auto-complete/&quot;&gt;AutoCompletes&lt;/a&gt; and &lt;a href=&quot;https://ant.design/components/mention/&quot;&gt;mentions&lt;/a&gt; and &lt;a href=&quot;https://ant.design/components/select/&quot;&gt;selects with tag modes&lt;/a&gt; and &lt;a href=&quot;https://ant.design/components/calendar/&quot;&gt;a calendar&lt;/a&gt; and &lt;a href=&quot;https://ant.design/components/tree/&quot;&gt;trees&lt;/a&gt; and &lt;a href=&quot;https://ant.design/components/timeline/&quot;&gt;timelines&lt;/a&gt; and &lt;a href=&quot;https://ant.design/components/drawer/&quot;&gt;drawers&lt;/a&gt; and my favorite &lt;a href=&quot;https://ant.design/components/modal/&quot;&gt;modals that animate open from the click location&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you need a component, antd probably has it.&lt;/p&gt;
+&lt;p&gt;Unfortunately all that comes with the cost of a larger JavaScript bundle.&lt;/p&gt;
 &lt;p&gt;When I set out to update SQLPad’s UI, I initially decided on antd because I wanted a library that had everything. I wanted the design to be cohesive, and I wanted it to be easy for others to expand on the UI if necessary. Instead of dealing with a random assortment of components I built, someone could simply take from the component library of antd.&lt;/p&gt;
 &lt;p&gt;I think that’s a great benefit for a project, but I’m not sure if it is worth the cost for SQLPad.&lt;/p&gt;
-&lt;p&gt;I ended up building my own tree and table components. The other big component experiences are a code editor and a charting library (also not antd).&lt;/p&gt;
+&lt;p&gt;I ended up building my own tree and table components, and the other main component experiences are a code editor and a charting library which are also not from antd. (I realize how this does not fit with the paragraph above saying antd has everything you need.)&lt;/p&gt;
 &lt;p&gt;I should have maybe thought about this a bit more before taking on a UI component conversion, but my component needs are pretty basic. Buttons, inputs, modals, toasts, and some tabs… I’m set. I don’t need a lot of the fancy antd components listed above. For those I do need, I can expand on some primitive react UI libraries like &lt;a href=&quot;https://ui.reach.tech/&quot;&gt;Reach UI&lt;/a&gt; and &lt;a href=&quot;https://github.com/downshift-js/downshift&quot;&gt;downshift&lt;/a&gt; and still keep the bundle small.&lt;/p&gt;
 &lt;h2&gt;Removing antd&lt;/h2&gt;
-&lt;p&gt;This is going to take a while, but I’ve settled on a plan.&lt;/p&gt;
-&lt;p&gt;Fortunately for me, antd uses old-fashioned CSS to style its components.&lt;/p&gt;
-&lt;p&gt;Since I like the look and feel of antd, I’ve decided to copy the pieces of style I like for components like buttons and inputs. I’m not going to aim for implementing 100% of it, just the basics. Doing this will also give me some freedom to alter the styles as I see fit for some non-antd use cases (like the query editor toolbar).&lt;/p&gt;
-&lt;p&gt;I’ve just decided this post is going to be like a live-blog of this effort because its going to take a while.&lt;/p&gt;
+&lt;p&gt;This was difficult work to push through because I spent a long time refactoring the previous solution and altering the design of SQLPad to fit to antd components. If it weren’t for the self challenge to shrink the JS bundle I would not have put myself through this. On the upside, all that refactoring to antd helped make the transition off it easier. I have a better understanding of React now than I did 3 years ago.&lt;/p&gt;
+&lt;p&gt;antd uses old-fashioned CSS to style its components. I decided to copy the pieces of style I like for components like buttons and inputs and use that as a base style to build on. With CSS module support in create-react-app 2+ I figured I’d give css modules a shot too.&lt;/p&gt;
+&lt;p&gt;And now for some random thoughts on how things went.&lt;/p&gt;
 &lt;h3&gt;Buttons&lt;/h3&gt;
-&lt;p&gt;The Button component was the first to convert. It invovled wrapping a regular html button with some css and logic around when to use what class. The CSS ripped from antd and lightly modified.&lt;/p&gt;
-&lt;p&gt;With CSS module support in create-react-app 2+ I figured I’d give it a shot. I’m not 100% sure how to manage colors across css files (is it still like old global CSS where you copy paste the colors everywhere?)&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; React &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;react&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;p&gt;Buttons were the first to convert. I started out wrapping a regular html button with some css and logic around when to use what class. The CSS ripped from antd and lightly modified.&lt;/p&gt;
+&lt;p&gt;Its initial component implementation looked like this.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;jsx&quot;&gt;&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; React &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;react&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; styles &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;./Button.module.css&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
 &lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Button&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; children&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; type&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; className&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;rest &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
@@ -38,19 +37,232 @@
   &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
   &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;button className&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;classNames&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot; &quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;rest&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
-      &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;children&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;button&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;button&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;className&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;classNames&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot; &quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token spread&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;rest&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;children&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;button&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
   &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Easy!&lt;/p&gt;
+&lt;p&gt;Or is it? It wasn’t long until I started having a lot of styles copied across components (primary/danger styles for example). Then with the introduction of reach tooltip, I ran into smaller nuanced edge cases that needed to be addressed.&lt;/p&gt;
+&lt;p&gt;The Reach tooltip component passes on a ref to its child component for positioning, but since I am using functional components this means I had to wrap my component function in &lt;code class=&quot;language-text&quot;&gt;React.forwardRef&lt;/code&gt;. Then using the application teased out issues with tooltips on hover of disabled buttons. A quick googling brought me to an &lt;a href=&quot;https://getbootstrap.com/docs/4.0/components/tooltips/#disabled-elements&quot;&gt;explanation of why by Bootstrap&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Instead of getting hover tooltips on disabled buttons I just opted to not show the tooltip. Handling this case influenced my component API though in ways I haven’t given much thought to in the past though. Up until this point I was using my Tooltip and Button components separately:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;jsx&quot;&gt;&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;Tooltip&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;helpful tip&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;Button&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;disabled&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;disabled&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;my button&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;Button&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;Tooltip&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This worked well for ad-hoc building of things but there’s no way I was going to do this everywhere there was a disabled button:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;jsx&quot;&gt;&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  disabled &lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;Button&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;disabled&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;my button&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;Button&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;Tooltip&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;helpful tip&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;Button&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;my button&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;Button&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;Tooltip&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;So instead I opted to add a tooltip prop to the &lt;code class=&quot;language-text&quot;&gt;Button&lt;/code&gt; component and have it own its tooltip. This comes at the expense of losing the ability to tweak tooltip styles or other properties outside the &lt;code class=&quot;language-text&quot;&gt;Button&lt;/code&gt; component, but that’s something I’m okay with, because the application owns the button implementation now, not a component library.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;jsx&quot;&gt;&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;Button&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;disabled&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;disabled&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;tooltip&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;helpful tip&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+  my button
+&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;Button&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In addition to tooltip considerations, icons also needed to be considered.&lt;/p&gt;
+&lt;p&gt;To get to the point of all this… The simplest of all components gradually grew to something more complex. And I’m sure it’ll continue to grow in complexity.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;jsx&quot;&gt;&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; React &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;react&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; styles &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;./Button.module.css&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; Tooltip &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;./Tooltip&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;ICON_SIZE&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;18&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; Button &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; React&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;forwardRef&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;token parameter&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; children&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; icon&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; type&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; htmlType&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; tooltip&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; disabled&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; className&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;rest &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    ref&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; classNames &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;styles&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;btn&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;type &lt;span class=&quot;token operator&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;primary&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      classNames&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;styles&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;primary&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;type &lt;span class=&quot;token operator&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;danger&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      classNames&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;styles&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;danger&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;className&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      classNames&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;className&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; button &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;button&lt;/span&gt;
+        &lt;span class=&quot;token attr-name&quot;&gt;ref&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;ref&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;
+        &lt;span class=&quot;token attr-name&quot;&gt;className&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;classNames&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot; &quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;
+        &lt;span class=&quot;token attr-name&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;htmlType&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;
+        &lt;span class=&quot;token attr-name&quot;&gt;disabled&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;disabled&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;
+        &lt;span class=&quot;token spread&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;rest&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;icon &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; React&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;cloneElement&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;icon&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; size&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;ICON_SIZE&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;children &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; icon &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;span&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; width&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;children&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;button&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;// If the button is disabled the tooltip gets weird on hover&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;tooltip &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; disabled&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; button&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;Tooltip&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;tooltip&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;button&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;Tooltip&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;default&lt;/span&gt; Button&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;Select&lt;/h3&gt;
-&lt;p&gt;For the Select component, I’ve opted to just use the standard HTML select components, and deal with the fact that the options &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#Styling_with_CSS&quot;&gt;won’t match the rest of the design&lt;/a&gt;.&lt;/p&gt;
-&lt;h2&gt;TO BE CONTINUED…&lt;/h2&gt;
+&lt;p&gt;For the Select component I’ve opted to just use the standard HTML select element, and deal with its limitations. &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#Styling_with_CSS&quot;&gt;Mozilla kindly points out that the select element is notorously difficult to style&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I always thought the style was in regards to the options, but it turns out you also can’t change the border radius? Really?!?&lt;/p&gt;
+&lt;p&gt;Not much I wanted to say here other than you don’t know what you can’t style until you try.&lt;/p&gt;
+&lt;h3&gt;Modals/dialogs, tooltips, and menus&lt;/h3&gt;
+&lt;p&gt;For the components that don’t have native browser equivalents, I opted to go with those offered by &lt;a href=&quot;https://ui.reach.tech/&quot;&gt;ReachUI&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The library aims to provide an accessible foundation for components which is great. The main draw for me though is that the components themselves are very basic and not styled much. They are also lightweight. Exactly the kind of component library I need for this exercise!&lt;/p&gt;
+&lt;p&gt;Something I didn’t quite expect from the focus on accessibility? Really pleasant keyboard navigation throughout the application. Modals open and set focus to the first focusable element or the component of your choice. Escape key closes it. Tooltips show when tabbing through components. It’s great.&lt;/p&gt;
+&lt;h3&gt;Toast messages&lt;/h3&gt;
+&lt;p&gt;Something antd had that I really liked (and overused) was the ability to easily create a toast/notification message imperatively. Instead of setting an error state somewhere and then rendering an error component in response to that state (and then unsetting that state after some time), you interact with an API that does all that for you somewhere near the top of your app by calling a function &lt;code class=&quot;language-text&quot;&gt;message.error(&amp;#39;something happened&amp;#39;);&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;You could recreate this with redux or context or something similar, but I opted to use a simple event emitter pub/sub called &lt;a href=&quot;https://github.com/developit/mitt&quot;&gt;mitt&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Since it is not stored or context based, there’s no importing of context reference or connecting the component to actions to use it. Simply import the message function and call it.&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&quot;https://github.com/rickbergfalk/sqlpad/blob/master/client/src/common/message.js&quot;&gt;implementation&lt;/a&gt; is really basic and naive, but it works. It has me thinking as to why we (developers using React) don’t use more of event pub/sub outside of React.&lt;/p&gt;
+&lt;h3&gt;Tag select/auto complete&lt;/h3&gt;
+&lt;p&gt;For building my own tag input, I opted to use &lt;a href=&quot;https://github.com/downshift-js/downshift&quot;&gt;downshift&lt;/a&gt; because it’s a primitive for building these kinds of inputs where you want some auto complete and is fairly popular.&lt;/p&gt;
+&lt;p&gt;I’m thankful this library exists and that there are so many examples… but is it possible for a React primitive to be too primitive?&lt;/p&gt;
+&lt;p&gt;Reading through the examples and trying to build something was not only difficult, but resulted in code that (in my opinion) is hard to follow.&lt;/p&gt;
+&lt;p&gt;Ultimately I’d like perhaps something between &lt;a href=&quot;https://github.com/JedWatson/react-select&quot;&gt;react-select&lt;/a&gt; and downshift.&lt;/p&gt;
+&lt;p&gt;Or I don’t know maybe it’s fine. It was about this point I wanted this to be over with.&lt;/p&gt;
+&lt;h3&gt;Application styles (I can do whatever I want I’m an adult)&lt;/h3&gt;
+&lt;p&gt;Something exciting and new that has come out of all this is the ability to make SQLPad feel like my own. While I used antd as a starting point, some things have changed to make it not at all like antd.&lt;/p&gt;
+&lt;p&gt;Buttons are a bit more square and raised. Inputs have an inset shadow. I introduced a lot of magenta. Maybe too much. I don’t know if this will stick around for the v3 release, but it is kind of nice to have something new and unique… right? (I was listening to a lot of synthwave while doing this work and I think I want the aesthetic in the app?)&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/c711fe6984cc747498bd63b9d0a94085/d7b06/editor-overview.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 64.686737184703%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABYlAAAWJQFJUiTwAAABhklEQVQ4y31TyW7CMBDl/z+qx/bWW08tpapACjhxVsdr8urnYKAl1GjkJfOWGZtN13Xo+x5KKYzjiKZpIFqBWtVoxxajHSF7iaIqoI2Gdx5aa/SDgtcdnj9HvHwhjgA/BWz4kTFNUwrjDLZyi129gxgErLeY5glhDkTBWgsXSTnmmTwGH/Urnt7ecdgJbOiqbVsMw5CSCHbBJfI5IuaEug46dEGhNhK9VdAuVmVKfAuJrlGLw6IoUFXVWfU3QT5LvyRAwQraV/CROEz2V24iPJ1OqOv6Cv4n6BzUnJeSl4jn5+8XQinlqru14X0s27k0J4E1h2VZXprOm2ZfefN8Bewv5240aJVO58Sx/7fBsztCgvf7fXpKJGFv6f5wOKCsJERZLeuYnwUZNEHMHSH3XIcQklsKUP14PEIIkUCcicmlM4wxab4QMikTcp+TqE4nmZD7nJ9zGBSlgVWHt4T5X/SIkCQM4h4SMpnlPCLkOoveERLEpud3uFYy+8jHT0Le/i3h35J/AC3J7nJqpiAhAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;The editor after all this&quot;
+        title=&quot;&quot;
+        src=&quot;/static/c711fe6984cc747498bd63b9d0a94085/b9e4f/editor-overview.png&quot;
+        srcset=&quot;/static/c711fe6984cc747498bd63b9d0a94085/cf440/editor-overview.png 148w,
+/static/c711fe6984cc747498bd63b9d0a94085/d2d38/editor-overview.png 295w,
+/static/c711fe6984cc747498bd63b9d0a94085/b9e4f/editor-overview.png 590w,
+/static/c711fe6984cc747498bd63b9d0a94085/f9b6a/editor-overview.png 885w,
+/static/c711fe6984cc747498bd63b9d0a94085/2d849/editor-overview.png 1180w,
+/static/c711fe6984cc747498bd63b9d0a94085/bbefa/editor-overview.png 1770w,
+/static/c711fe6984cc747498bd63b9d0a94085/d7b06/editor-overview.png 2458w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/21a7d9efb61e102b1a10584249683730/45fcb/dialog-gradient.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 64.82084690553746%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABYlAAAWJQFJUiTwAAAC+ElEQVQ4yy2T62/aVhiH+eO3Sfuy7UOmaWqnpEmbAg5gwMYGGzB3ArmWalvTSu26arkoSTOwwfdnL7APr458/DvP+b2Xk9nrrsg6Pmo7wLADGsYSu+LSU1eMSytOij4TxWOcnXNaDJiqIaNygFP1cRordtWAZ1qCNoo5lMi87oUUnZC6k+DYCQMz5t17n8+3Pv/cxjw8sI17eLzfrnfy/fcnGFnQsyNy5jU7pQd2TY9MvhNQslY0GgHDRsKZLQffz5lbf+I5H0mPb4hH1ySTG5KzW5LzO6KLO9x5xLGZ0DciDMsla3jkmgGZgrgr6gvqusfESLhsCnD6hPf9JU/fXvL1uwu+fnPO069/sLy430Qwk1WAJ7WAsRHSb0GzB9UBZNbplmsulr5kaqbM9ISPw5SbqaQ3hsUQVn0JEbuy93gKt+fweZww02JOpER9KZXlpFR66Rao1hZYmrcFSoE/FBO+5BLuDxPc/YRodxvenuy9lH9Z0RQS3mqpAFMBphtgdQ1cp1wyXEwBHtcl5VrCVTXlr7K4LKY8Kin/5rfxqCTcCOhTSRpXEa1ks65jt5nS6KSU+wLMd0MUc4Fe8xhYCSdGsnF5VY7loLgRwPX/8WUDS7lSY95UY6Z6xEAa2W6n1LopxYEAD2VsXtddVGl5p5XSlUJ3lDnTwpI3hRWznMfv+SWzwwVvj3zOlRWTI5dxxacnWsv00Ro+SnPFK5mYzItByL7tkhPo2rYt42OpC+lezKQaMpXhPlV9Rvk5YwGN1CXtwnyjaVkRNVt60A7JCuxgEJF5Ngp53nI5sD0qUgOtGaJJ1x07pluP6Og+fT2gVRJA2aVd8zGrLpruYrRj1E5EvhcJLOS3Y3kpP09Cdjouzx0PZZSidELy4rYmYrMpQ1v3qYvrqrbYXKRLekVpoiKaYjcm2xfYMGJt7JepAH84i/hx6LHTX7I/STnoh7xouhz1Y4pye6HlU5J3nqsvyDXkUvl+KS9jrXk1jNkbCWwSszMN+eks5j9rEIVif8hkcAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;A very magenta and cyan modal overlay&quot;
+        title=&quot;&quot;
+        src=&quot;/static/21a7d9efb61e102b1a10584249683730/b9e4f/dialog-gradient.png&quot;
+        srcset=&quot;/static/21a7d9efb61e102b1a10584249683730/cf440/dialog-gradient.png 148w,
+/static/21a7d9efb61e102b1a10584249683730/d2d38/dialog-gradient.png 295w,
+/static/21a7d9efb61e102b1a10584249683730/b9e4f/dialog-gradient.png 590w,
+/static/21a7d9efb61e102b1a10584249683730/f9b6a/dialog-gradient.png 885w,
+/static/21a7d9efb61e102b1a10584249683730/2d849/dialog-gradient.png 1180w,
+/static/21a7d9efb61e102b1a10584249683730/bbefa/dialog-gradient.png 1770w,
+/static/21a7d9efb61e102b1a10584249683730/45fcb/dialog-gradient.png 2456w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;h2&gt;Closing thoughts&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;HTML/CSS has gotten better over the years, but there are still some wacky parts and missing element primitives you’d think exist by now.&lt;/li&gt;
+&lt;li&gt;I definitely hit a point where I just want this work to be over with. And that’s kind of a sad feeling to have towards something you’ve created.&lt;/li&gt;
+&lt;li&gt;The bundle size is definitely smaller though!!!&lt;/li&gt;
+&lt;/ul&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;              bundle  ~2.58 MB
--               antd  ~?.?? MB
-+       ?? ??? ?????  ~?.?? MB
+-               antd
++      @reach/dialog
++ @reach/menu-button
++     @reach/tooltip
++          downshift
++       match-sorter
++          mdi-react
++               mitt
++       react-switch
 -------------------------------
-          new bundle  ~?.?? MB&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Bundle Battle 2 - react-virtualized, react-window]]></title><description><![CDATA[This post is part of a series detailing the work involved to slim down SQLPad’s JavaScript bundle size. Read the introductory post.React…]]></description><link>https://gatsby-starter-blog-demo.netlify.com//20190429-bundle-battle-2/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com//20190429-bundle-battle-2/</guid><pubDate>Mon, 29 Apr 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;em&gt;This post is part of a series detailing the work involved to slim down SQLPad’s JavaScript bundle size. &lt;a href=&quot;/20190428-bundle-battle/&quot;&gt;Read the introductory post&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+          new bundle  ~1.63 MB&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/a7679163b9ba534bc249fd14cdc92afa/6324c/bundle-20190514.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 51.057401812688816%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAABH0lEQVQoz4WS6Y6DMAyE8/6PyA9AHKUUKHcL5fDqs2SUrlbaSCM7jmOPR3bTNMm6rrIsi9q+7+XxeMg8z3p/vV5S17XG8N/vt9rn8ylVValPDYOjkH+O45Bt2+Q8z684MXu35vu+K8ZxlGEY1F4FKeAXsbuBPIr9PhbDfhX87/zF2i/4+XykaRpxaAVtAnwynbjbWGjTtu01og/ysPwpy1IcyRS53W6X8CY6RUAcxxJFkRRFoXl5nmtumqaSJIlkWSZhGGr8GhnqPn07iE1nGjMB4E5DJOi6TrVjO9gGxyMOCcBWxBjzDuzOqsAIwBhWlgNbR+L9fldBKUgC4BHLWGb9EZEgCAKN4WNp4GyBEdVAzPfRkdFMb6ztnfkQgv0PERoBtJkeQsEAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Bundle minus react-virtualized&quot;
+        title=&quot;&quot;
+        src=&quot;/static/a7679163b9ba534bc249fd14cdc92afa/b9e4f/bundle-20190514.png&quot;
+        srcset=&quot;/static/a7679163b9ba534bc249fd14cdc92afa/cf440/bundle-20190514.png 148w,
+/static/a7679163b9ba534bc249fd14cdc92afa/d2d38/bundle-20190514.png 295w,
+/static/a7679163b9ba534bc249fd14cdc92afa/b9e4f/bundle-20190514.png 590w,
+/static/a7679163b9ba534bc249fd14cdc92afa/f9b6a/bundle-20190514.png 885w,
+/static/a7679163b9ba534bc249fd14cdc92afa/2d849/bundle-20190514.png 1180w,
+/static/a7679163b9ba534bc249fd14cdc92afa/bbefa/bundle-20190514.png 1770w,
+/static/a7679163b9ba534bc249fd14cdc92afa/6324c/bundle-20190514.png 3310w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Bundle Battle 2 - react-virtualized, react-window]]></title><description><![CDATA[This post is part of a series detailing the work involved to slim down SQLPad’s JavaScript bundle size. Read the introductory post.React…]]></description><link>https://gatsby-starter-blog-demo.netlify.com//20190429-bundle-battle-2/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com//20190429-bundle-battle-2/</guid><pubDate>Mon, 29 Apr 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;em&gt;This post is part of a series detailing the work involved to slim down SQLPad’s JavaScript bundle size. &lt;a href=&quot;/20190428-bundle-battle/&quot;&gt;Read the introductory post&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/bvaughn/react-virtualized&quot;&gt;React-virtualized&lt;/a&gt; by Brian Vaughn is a collection of lower level components to help efficiently render large lists and tables (thousands of rows) without crushing React or the browser. This is primarily for applications where you do not want to paginate your data, and instead show all of it. Perfect for an app that renders a large table of SQL query results!&lt;/p&gt;
 &lt;p&gt;It was initially brought into SQLPad to assist in building a custom data grid component to replace &lt;a href=&quot;https://github.com/schrodinger/fixed-data-table-2&quot;&gt;fixed-data-table-2&lt;/a&gt; which itself was a continuation of the abandoned fixed-data-table component. At the time there were some performance issues and other quirks, so I decided to build my own data grid with react-virtualized.&lt;/p&gt;
 &lt;p&gt;Fortunately for me Brian is already on top of things, and has created &lt;a href=&quot;https://github.com/bvaughn/react-window&quot;&gt;react-window&lt;/a&gt;, an amazing spiritual successor of sorts to react-virtualized. It is a complete rewrite of react-virtualized with &lt;a href=&quot;https://github.com/bvaughn/react-window#how-is-react-window-different-from-react-virtualized&quot;&gt;a focus on making it smaller and faster, as well as improving the API&lt;/a&gt;.&lt;/p&gt;
