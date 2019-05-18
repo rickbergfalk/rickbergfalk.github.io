@@ -2,7 +2,51 @@
       This is maybe my 10th attempt at a blog. 
       All I want is a place to put my thoughts. 
       I'm writing for me not you. 
-      That's what I'm telling myself this time hope this works.]]></description><link>https://gatsby-starter-blog-demo.netlify.com/</link><generator>RSS for Node</generator><lastBuildDate>Wed, 15 May 2019 02:55:23 GMT</lastBuildDate><item><title><![CDATA[Bundle Battle 3 - antd]]></title><description><![CDATA[This post is part of a series detailing the work involved to slim down SQLPad’s JavaScript bundle size. Read the introductory post.First…]]></description><link>https://gatsby-starter-blog-demo.netlify.com//20190430-bundle-battle-3/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com//20190430-bundle-battle-3/</guid><pubDate>Tue, 14 May 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;em&gt;This post is part of a series detailing the work involved to slim down SQLPad’s JavaScript bundle size. &lt;a href=&quot;/20190428-bundle-battle/&quot;&gt;Read the introductory post&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+      That's what I'm telling myself this time hope this works.]]></description><link>https://gatsby-starter-blog-demo.netlify.com/</link><generator>RSS for Node</generator><lastBuildDate>Sat, 18 May 2019 02:54:48 GMT</lastBuildDate><item><title><![CDATA[Bundle Battle 4 - momentjs]]></title><description><![CDATA[This post is part of a series detailing the work involved to slim down SQLPad’s JavaScript bundle size. Read the introductory post.Momentjs…]]></description><link>https://gatsby-starter-blog-demo.netlify.com//20190515-bundle-battle-4/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com//20190515-bundle-battle-4/</guid><pubDate>Wed, 15 May 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;em&gt;This post is part of a series detailing the work involved to slim down SQLPad’s JavaScript bundle size. &lt;a href=&quot;/20190428-bundle-battle/&quot;&gt;Read the introductory post&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;Momentjs is 50 KB&lt;/h2&gt;
+&lt;p&gt;And &lt;a href=&quot;https://github.com/rickbergfalk/sqlpad/pull/430/files#diff-486a99fac215e1e194438ff89b218c15L16&quot;&gt;I was only using it for 1 function call&lt;/a&gt;, which was easily replaced with just regular JavaScript.&lt;/p&gt;
+&lt;p&gt;At one point I was doing a that whole “query was updated 2 days ago” type text but since got rid of it. And really if that comes back I can just determine that server side and send the string down to the browser.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;              bundle  ~1.63 MB
+-             moment
+-------------------------------
+          new bundle  ~1.58 MB&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/eb36e88a9d3901e68fe79b87b4b98b9e/80f7c/bundle-20190515.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 50.96618357487922%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAABIElEQVQoz3WTh46EMAxE8//fiBC9l6UsRbD49CwZcS2SZTyxJ2MnuHmeZd932bZN/TAMUlWVvN9vjdd1lbquFVuWRWN813U3Bsc0TVrjIHquz+cjx3HIdV3fcDDbt8PP81SDbBxH9TchBE8Si83Ig+znMgyP2l8K/1tP1c+DjRDFbduKgxXQ5DMjDrGYYnKYLd/kPr3lUNM0jTgGCkme52oMFoKiKNTiOJYoisT3fSnLUovA2MuyTJIkUZzaNE3FIfWv9ijkdknkNomDILg76PteL4EcCBGBWmfJgJxqT4TTUGAx+57n6QFGwtPBh2Gota/XSxyFGNLNQ0QSrRnGN4SoBCM23MaiLTNsmxut2OPFwNlHEV2giJhW7Qdgzwy1X3MfAEy1UJoyAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Bundle minus react-virtualized&quot;
+        title=&quot;&quot;
+        src=&quot;/static/eb36e88a9d3901e68fe79b87b4b98b9e/b9e4f/bundle-20190515.png&quot;
+        srcset=&quot;/static/eb36e88a9d3901e68fe79b87b4b98b9e/cf440/bundle-20190515.png 148w,
+/static/eb36e88a9d3901e68fe79b87b4b98b9e/d2d38/bundle-20190515.png 295w,
+/static/eb36e88a9d3901e68fe79b87b4b98b9e/b9e4f/bundle-20190515.png 590w,
+/static/eb36e88a9d3901e68fe79b87b4b98b9e/f9b6a/bundle-20190515.png 885w,
+/static/eb36e88a9d3901e68fe79b87b4b98b9e/2d849/bundle-20190515.png 1180w,
+/static/eb36e88a9d3901e68fe79b87b4b98b9e/bbefa/bundle-20190515.png 1770w,
+/static/eb36e88a9d3901e68fe79b87b4b98b9e/80f7c/bundle-20190515.png 3312w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Bundle Battle 3 - antd]]></title><description><![CDATA[This post is part of a series detailing the work involved to slim down SQLPad’s JavaScript bundle size. Read the introductory post.First…]]></description><link>https://gatsby-starter-blog-demo.netlify.com//20190430-bundle-battle-3/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com//20190430-bundle-battle-3/</guid><pubDate>Tue, 14 May 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;em&gt;This post is part of a series detailing the work involved to slim down SQLPad’s JavaScript bundle size. &lt;a href=&quot;/20190428-bundle-battle/&quot;&gt;Read the introductory post&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;h2&gt;First some love for antd&lt;/h2&gt;
 &lt;p&gt;Before getting into this one I want to express some appreciation for &lt;a href=&quot;https://ant.design/&quot;&gt;Ant Design&lt;/a&gt; and antd.&lt;/p&gt;
 &lt;p&gt;antd is an amazing component library. Of the various React component libraries out there, my favorite at the moment is antd. It has a clean modern look and a nice density about it, making it a great pick for more enterprisey applications. The components were a pleasure to work with.&lt;/p&gt;
@@ -349,7 +393,7 @@
   
   &lt;/a&gt;
     &lt;/p&gt;
-&lt;p&gt;That’s minified but uncompressed. Once gzipped Create-React-App says it’ll squish down to 723.48 KB, which sounds better but doesn’t change the fact it is still 2.68 MB of JS that needs to parse, compile, and execute. SQLPad as become one of &lt;em&gt;those&lt;/em&gt; JavaScript apps the Chrome dev relations team tweets and blogs about.&lt;/p&gt;
+&lt;p&gt;That’s minified but uncompressed. Once gzipped Create-React-App says it’ll squish down to 723.48 KB, which sounds better but doesn’t change the fact it is still 2.68 MB of JS that needs to parse, compile, and execute. &lt;del&gt;SQLPad as become one of &lt;em&gt;those&lt;/em&gt; JavaScript apps the Chrome dev relations team tweets and blogs about.&lt;/del&gt; (Update 5/17: Actually never mind one of them tweeted that starting with create-react-app is a failure from the start so this whole effort is bogus probably)&lt;/p&gt;
 &lt;p&gt;I suppose one could argue that bundle size is not &lt;em&gt;that&lt;/em&gt; important for an app like SQLPad. The target device is not mobile, and the experience is more of an application where you write SQL and analyze data, not a site where you consume content.&lt;/p&gt;
 &lt;p&gt;Still, there is opportunity to shave off some larger-than-necessary libraries and be a bit smarter and managing the bundle budget.&lt;/p&gt;
 &lt;h2&gt;Observations&lt;/h2&gt;
