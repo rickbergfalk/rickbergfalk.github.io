@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SQL in JS</title>
+    <link rel="stylesheet" href="/styles/newcss.css" />
+  </head>
+  <body>
+    <h1>SQL in JS</h1>
+    <p>
+      Just playing around with eleventy. No probably won't actually blog.
+    </p>
+    <p>
+      In fact... Just realized I've rewritten this blog site just as many times
+      as I have written actual posts. First way back there was the wordpress
+      experimentation. Then my own static site script. Then Hugo. Then Gatsby.
+    </p>
+    <p>
+      Now Eleventy. 11ty? now I have to check to see what the style is. Eleventy
+      seems to be the preferred format.
+    </p>
+    <p>
+      You know I was almost was going to do this with Sapper. Maybe next year.
+    </p>
+    <h2>Posts</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>title</th>
+          <th>date</th>
+          <th>number_of_characters?</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%- for post in collections.post | reverse -%}
+        <tr>
+          <td>
+            <a href="{{ post.url }}">{{ post.data.title }}</a>
+          </td>
+          <td>
+            <small>{{ post.date | dateonly }}</small>
+          </td>
+          <td>
+            <small>{{ post.templateContent.length }}</small>
+          </td>
+        </tr>
+        {%- endfor -%}
+      </tbody>
+    </table>
+    <hr />
+  </body>
+</html>

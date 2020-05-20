@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/prism.css" />
+    <link rel="stylesheet" href="/styles/newcss.css" />
+    <title>Bundle Battle 4 - momentjs</title>
+  </head>
+  <body>
+    <a href="/" style="font-size: 24px;">🔙 🏠</a><br /><br />
+    <main>
+      <p><em>This post is part of a series detailing the work involved to slim down SQLPad's JavaScript bundle size. <a href="/posts/20190428-bundle-battle/">Read the introductory post</a>.</em></p>
+<h2>Momentjs is 50 KB</h2>
+<p>And <a href="https://github.com/rickbergfalk/sqlpad/pull/430/files#diff-486a99fac215e1e194438ff89b218c15L16">I was only using it for 1 function call</a>, which was easily replaced with just regular JavaScript.</p>
+<p>At one point I was doing a that whole &quot;query was updated 2 days ago&quot; type text but since got rid of it. And really if that comes back I can just determine that server side and send the string down to the browser.</p>
+<pre><code>              bundle  ~1.63 MB
+-             moment
+-------------------------------
+          new bundle  ~1.58 MB
+</code></pre>
+<p><img src="./bundle-20190515.png" alt="Bundle minus react-virtualized"></p>
+
+    </main>
+    <br /><br />
+    <a href="/" style="font-size: 24px;">🔙 🏠</a> Thanks for reading!
+  </body>
+</html>
