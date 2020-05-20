@@ -4,7 +4,7 @@ ghpages.publish(
   "docs",
   {
     branch: "master",
-    repo: "https://github.com/rickbergfalk/rickbergfalk.github.io.git",
+    repo: "git@github.com:rickbergfalk/rickbergfalk.github.io.git",
   },
   (err) => {
     if (err) {
