@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "npx @11ty/eleventy --input=src --output=docs",
-    "dev": "npx @11ty/eleventy --serve --input=src --output=docs",
-    "deploy": "node publish.js",
+    "start": "npx @11ty/eleventy --serve --input=src --output=docs",
+    "deploy": "node deploy.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

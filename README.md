@@ -1,9 +1,12 @@
 # This is an eleventy site now
 
-To run the site in dev mode do
-
 ```sh
-npm run dev
-```
+# To serve the site with auto reload for dev
+npm start
 
-That'll serve it up and reload and all that stuff.
+# To build the site
+npm run build
+
+# To deploy the site
+npm run deploy
+```
