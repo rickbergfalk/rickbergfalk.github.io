@@ -4,7 +4,7 @@ module.exports = function (eleventyConfig) {
   // https://www.11ty.dev/docs/copy/
   // By setting these as template formats they get copied to the build
   // css is not yet a recognized template extension in Eleventy
-  eleventyConfig.setTemplateFormats(["md", "njk", "css", "jpg", "png"]);
+  eleventyConfig.setTemplateFormats(["md", "njk", "css", "jpg", "png", "html"]);
   eleventyConfig.addPlugin(syntaxHighlight);
 
   eleventyConfig.addFilter("dateonly", function (value) {
